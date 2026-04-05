@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>TechFactory PH — Build Your Power. Own Your Machine.</title>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,300;0,400;0,600;0,700;1,300&family=Barlow+Condensed:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;600;700&family=Barlow+Condensed:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
 :root {
   --black: #080a0f;
@@ -20,20 +20,9 @@
   --font-body: 'Barlow', sans-serif;
   --font-condensed: 'Barlow Condensed', sans-serif;
 }
-
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
 html { scroll-behavior: smooth; }
-
-body {
-  background: var(--black);
-  color: var(--white);
-  font-family: var(--font-body);
-  font-weight: 300;
-  overflow-x: hidden;
-}
-
-/* ── SCROLLBAR ── */
+body { background: var(--black); color: var(--white); font-family: var(--font-body); font-weight: 300; overflow-x: hidden; }
 ::-webkit-scrollbar { width: 4px; }
 ::-webkit-scrollbar-track { background: var(--dark); }
 ::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 2px; }
@@ -43,682 +32,170 @@ nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
   display: flex; align-items: center; justify-content: space-between;
   padding: 0 40px; height: 64px;
-  background: rgba(8,10,15,0.92);
-  backdrop-filter: blur(12px);
+  background: rgba(8,10,15,0.95); backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border);
 }
-
-.nav-logo {
-  font-family: var(--font-display);
-  font-size: 1.6rem;
-  letter-spacing: 2px;
-  color: var(--white);
-  text-decoration: none;
-}
-
+.nav-logo { font-family: var(--font-display); font-size: 1.6rem; letter-spacing: 2px; color: var(--white); text-decoration: none; }
 .nav-logo span { color: var(--accent); }
-
-.nav-links { display: flex; gap: 32px; list-style: none; }
-.nav-links a {
-  font-family: var(--font-condensed);
-  font-size: 0.85rem;
-  font-weight: 600;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  color: var(--muted);
-  text-decoration: none;
-  transition: color 0.2s;
-}
+.nav-links { display: flex; gap: 28px; list-style: none; align-items: center; }
+.nav-links a { font-family: var(--font-condensed); font-size: 0.85rem; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.2s; }
 .nav-links a:hover { color: var(--accent); }
-
-.nav-cta {
-  background: var(--accent);
-  color: var(--black) !important;
-  padding: 8px 20px;
-  font-weight: 700 !important;
-  transition: background 0.2s, transform 0.1s !important;
-}
-.nav-cta:hover { background: #00b8d9 !important; transform: translateY(-1px); }
-
+.nav-cta { background: var(--accent) !important; color: var(--black) !important; padding: 8px 20px !important; font-weight: 700 !important; }
+.nav-cta:hover { background: #00b8d9 !important; }
 .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
 .nav-hamburger span { width: 24px; height: 2px; background: var(--white); transition: all 0.3s; }
 
 /* ── HERO ── */
-.hero {
-  min-height: 100vh;
-  display: flex; align-items: center;
-  padding: 100px 40px 60px;
-  position: relative;
-  overflow: hidden;
-}
-
-.hero-bg {
-  position: absolute; inset: 0; z-index: 0;
-  background:
-    radial-gradient(ellipse 80% 60% at 70% 50%, rgba(0,212,255,0.06) 0%, transparent 60%),
-    radial-gradient(ellipse 50% 40% at 20% 80%, rgba(255,107,0,0.05) 0%, transparent 50%),
-    linear-gradient(180deg, var(--black) 0%, var(--dark) 100%);
-}
-
-.hero-grid {
-  position: absolute; inset: 0; z-index: 0; opacity: 0.04;
-  background-image: linear-gradient(var(--accent) 1px, transparent 1px), linear-gradient(90deg, var(--accent) 1px, transparent 1px);
-  background-size: 60px 60px;
-}
-
+.hero { min-height: 100vh; display: flex; align-items: center; padding: 100px 40px 60px; position: relative; overflow: hidden; }
+.hero-bg { position: absolute; inset: 0; z-index: 0; background: radial-gradient(ellipse 80% 60% at 70% 50%, rgba(0,212,255,0.06) 0%, transparent 60%), radial-gradient(ellipse 50% 40% at 20% 80%, rgba(255,107,0,0.05) 0%, transparent 50%), linear-gradient(180deg, var(--black) 0%, var(--dark) 100%); }
+.hero-grid { position: absolute; inset: 0; z-index: 0; opacity: 0.04; background-image: linear-gradient(var(--accent) 1px, transparent 1px), linear-gradient(90deg, var(--accent) 1px, transparent 1px); background-size: 60px 60px; }
 .hero-content { position: relative; z-index: 1; max-width: 700px; }
-
-.hero-eyebrow {
-  font-family: var(--font-condensed);
-  font-size: 0.8rem;
-  font-weight: 600;
-  letter-spacing: 4px;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 20px;
-  display: flex; align-items: center; gap: 12px;
-}
+.hero-eyebrow { font-family: var(--font-condensed); font-size: 0.8rem; font-weight: 600; letter-spacing: 4px; text-transform: uppercase; color: var(--accent); margin-bottom: 20px; display: flex; align-items: center; gap: 12px; }
 .hero-eyebrow::before { content: ''; width: 40px; height: 1px; background: var(--accent); }
-
-.hero h1 {
-  font-family: var(--font-display);
-  font-size: clamp(4rem, 9vw, 8rem);
-  line-height: 0.92;
-  letter-spacing: 2px;
-  margin-bottom: 28px;
-}
-
+.hero h1 { font-family: var(--font-display); font-size: clamp(4rem, 9vw, 8rem); line-height: 0.92; letter-spacing: 2px; margin-bottom: 28px; }
 .hero h1 .line2 { color: var(--accent); display: block; }
 .hero h1 .line3 { color: var(--muted); display: block; font-size: 0.55em; letter-spacing: 6px; }
-
-.hero-sub {
-  font-size: 1.1rem;
-  color: var(--muted);
-  line-height: 1.7;
-  margin-bottom: 40px;
-  max-width: 500px;
-}
-
+.hero-sub { font-size: 1.1rem; color: var(--muted); line-height: 1.7; margin-bottom: 40px; max-width: 500px; }
 .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
-
-.btn-primary {
-  display: inline-flex; align-items: center; gap: 10px;
-  background: var(--accent); color: var(--black);
-  padding: 14px 32px;
-  font-family: var(--font-condensed);
-  font-size: 0.95rem; font-weight: 700; letter-spacing: 1.5px;
-  text-transform: uppercase; text-decoration: none;
-  border: none; cursor: pointer;
-  transition: all 0.2s;
-  clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px));
-}
+.btn-primary { display: inline-flex; align-items: center; gap: 10px; background: var(--accent); color: var(--black); padding: 14px 32px; font-family: var(--font-condensed); font-size: 0.95rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; text-decoration: none; border: none; cursor: pointer; transition: all 0.2s; clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px)); }
 .btn-primary:hover { background: #00b8d9; transform: translateY(-2px); }
-
-.btn-secondary {
-  display: inline-flex; align-items: center; gap: 10px;
-  background: transparent; color: var(--white);
-  padding: 13px 32px;
-  font-family: var(--font-condensed);
-  font-size: 0.95rem; font-weight: 700; letter-spacing: 1.5px;
-  text-transform: uppercase; text-decoration: none;
-  border: 1px solid var(--border); cursor: pointer;
-  transition: all 0.2s;
-}
+.btn-secondary { display: inline-flex; align-items: center; gap: 10px; background: transparent; color: var(--white); padding: 13px 32px; font-family: var(--font-condensed); font-size: 0.95rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; text-decoration: none; border: 1px solid var(--border); cursor: pointer; transition: all 0.2s; }
 .btn-secondary:hover { border-color: var(--accent); color: var(--accent); }
-
-.hero-stats {
-  position: absolute; right: 40px; bottom: 60px; z-index: 1;
-  display: flex; flex-direction: column; gap: 24px;
-}
-
-.stat {
-  text-align: right;
-  border-right: 2px solid var(--accent);
-  padding-right: 20px;
-}
-
-.stat-num {
-  font-family: var(--font-display);
-  font-size: 2.4rem;
-  color: var(--white);
-  line-height: 1;
-}
-
-.stat-label {
-  font-family: var(--font-condensed);
-  font-size: 0.72rem;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: var(--muted);
-}
+.hero-stats { position: absolute; right: 40px; bottom: 60px; z-index: 1; display: flex; flex-direction: column; gap: 24px; }
+.stat { text-align: right; border-right: 2px solid var(--accent); padding-right: 20px; }
+.stat-num { font-family: var(--font-display); font-size: 2.4rem; color: var(--white); line-height: 1; }
+.stat-label { font-family: var(--font-condensed); font-size: 0.72rem; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); }
 
 /* ── SECTION BASE ── */
 section { padding: 100px 40px; }
-
-.section-label {
-  font-family: var(--font-condensed);
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 4px;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 12px;
-}
-
-.section-title {
-  font-family: var(--font-display);
-  font-size: clamp(2.4rem, 5vw, 4rem);
-  letter-spacing: 2px;
-  line-height: 1;
-  margin-bottom: 16px;
-}
-
-.section-sub {
-  color: var(--muted);
-  font-size: 1rem;
-  line-height: 1.7;
-  max-width: 600px;
-  margin-bottom: 60px;
-}
+.section-label { font-family: var(--font-condensed); font-size: 0.75rem; font-weight: 600; letter-spacing: 4px; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; }
+.section-title { font-family: var(--font-display); font-size: clamp(2.4rem, 5vw, 4rem); letter-spacing: 2px; line-height: 1; margin-bottom: 16px; }
+.section-sub { color: var(--muted); font-size: 1rem; line-height: 1.7; max-width: 600px; margin-bottom: 60px; }
 
 /* ── TICKER ── */
-.ticker {
-  background: var(--accent);
-  color: var(--black);
-  padding: 12px 0;
-  overflow: hidden;
-  white-space: nowrap;
-}
-
-.ticker-inner {
-  display: inline-flex; gap: 60px;
-  animation: ticker 25s linear infinite;
-}
-
-.ticker-item {
-  font-family: var(--font-condensed);
-  font-size: 0.85rem; font-weight: 700;
-  letter-spacing: 2px; text-transform: uppercase;
-}
-
+.ticker { background: var(--accent); color: var(--black); padding: 12px 0; overflow: hidden; white-space: nowrap; }
+.ticker-inner { display: inline-flex; gap: 60px; animation: ticker 25s linear infinite; }
+.ticker-item { font-family: var(--font-condensed); font-size: 0.85rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; }
 @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
 /* ── CATEGORIES ── */
 .categories { background: var(--dark); }
-
-.cat-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-  gap: 16px;
-}
-
-.cat-card {
-  background: var(--card);
-  border: 1px solid var(--border);
-  padding: 28px 20px;
-  text-align: center;
-  cursor: pointer;
-  transition: all 0.25s;
-  text-decoration: none; color: inherit;
-}
-
-.cat-card:hover {
-  border-color: var(--accent);
-  background: rgba(0,212,255,0.04);
-  transform: translateY(-4px);
-}
-
+.cat-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 16px; }
+.cat-card { background: var(--card); border: 1px solid var(--border); padding: 28px 20px; text-align: center; cursor: pointer; transition: all 0.25s; text-decoration: none; color: inherit; display: block; }
+.cat-card:hover { border-color: var(--accent); background: rgba(0,212,255,0.04); transform: translateY(-4px); }
 .cat-icon { font-size: 2rem; margin-bottom: 12px; }
-
-.cat-name {
-  font-family: var(--font-condensed);
-  font-size: 0.85rem; font-weight: 600;
-  letter-spacing: 1px; text-transform: uppercase;
-  color: var(--white);
-  margin-bottom: 4px;
-}
-
+.cat-name { font-family: var(--font-condensed); font-size: 0.85rem; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: var(--white); margin-bottom: 4px; }
 .cat-count { font-size: 0.75rem; color: var(--muted); }
 
-/* ── PRODUCTS SECTION ── */
-#products { background: var(--black); }
-
-.product-tabs {
-  display: flex; gap: 8px; flex-wrap: wrap;
-  margin-bottom: 40px;
-}
-
-.tab-btn {
-  font-family: var(--font-condensed);
-  font-size: 0.8rem; font-weight: 600;
-  letter-spacing: 1.5px; text-transform: uppercase;
-  padding: 8px 20px;
-  background: var(--card); color: var(--muted);
-  border: 1px solid var(--border); cursor: pointer;
-  transition: all 0.2s;
-}
-
-.tab-btn.active, .tab-btn:hover {
-  background: var(--accent); color: var(--black); border-color: var(--accent);
-}
-
-.products-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 20px;
-}
-
-.product-card {
-  background: var(--card);
-  border: 1px solid var(--border);
-  overflow: hidden;
-  transition: all 0.25s;
-  cursor: pointer;
-}
-
-.product-card:hover {
-  border-color: var(--accent);
-  transform: translateY(-4px);
-  box-shadow: 0 12px 40px rgba(0,212,255,0.08);
-}
-
-.product-img {
-  width: 100%; height: 200px;
-  object-fit: cover; object-position: center;
-  background: #0a0e16;
-  display: block;
-}
-
-.product-img-placeholder {
-  width: 100%; height: 200px;
-  background: linear-gradient(135deg, #0a0e16, #111620);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 3rem;
-}
-
+/* ── PRODUCTS ── */
+.product-tabs { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 40px; }
+.tab-btn { font-family: var(--font-condensed); font-size: 0.8rem; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; padding: 8px 20px; background: var(--card); color: var(--muted); border: 1px solid var(--border); cursor: pointer; transition: all 0.2s; }
+.tab-btn.active, .tab-btn:hover { background: var(--accent); color: var(--black); border-color: var(--accent); }
+.products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 20px; }
+.product-card { background: var(--card); border: 1px solid var(--border); overflow: hidden; transition: all 0.25s; cursor: pointer; }
+.product-card:hover { border-color: var(--accent); transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,212,255,0.08); }
+.product-img-placeholder { width: 100%; height: 200px; background: linear-gradient(135deg, #0a0e16, #111620); display: flex; align-items: center; justify-content: center; font-size: 3rem; }
 .product-body { padding: 20px; }
-
-.product-category {
-  font-family: var(--font-condensed);
-  font-size: 0.7rem; font-weight: 600;
-  letter-spacing: 2px; text-transform: uppercase;
-  color: var(--accent); margin-bottom: 8px;
-}
-
-.product-name {
-  font-family: var(--font-condensed);
-  font-size: 1rem; font-weight: 600;
-  color: var(--white); margin-bottom: 6px;
-  line-height: 1.3;
-}
-
-.product-specs {
-  font-size: 0.8rem; color: var(--muted);
-  line-height: 1.5; margin-bottom: 16px;
-}
-
-.product-footer {
-  display: flex; align-items: center; justify-content: space-between;
-}
-
-.product-price {
-  font-family: var(--font-display);
-  font-size: 1.4rem; color: var(--white);
-}
-
-.badge {
-  font-family: var(--font-condensed);
-  font-size: 0.65rem; font-weight: 700;
-  letter-spacing: 1px; text-transform: uppercase;
-  padding: 3px 10px;
-}
-
+.product-category { font-family: var(--font-condensed); font-size: 0.7rem; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; }
+.product-name { font-family: var(--font-condensed); font-size: 1rem; font-weight: 600; color: var(--white); margin-bottom: 6px; line-height: 1.3; }
+.product-specs { font-size: 0.8rem; color: var(--muted); line-height: 1.5; margin-bottom: 16px; }
+.product-footer { display: flex; align-items: center; justify-content: space-between; }
+.product-price { font-family: var(--font-display); font-size: 1.4rem; color: var(--white); }
+.badge { font-family: var(--font-condensed); font-size: 0.65rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding: 3px 10px; }
 .badge-stock { background: rgba(0,255,136,0.1); color: var(--green); border: 1px solid rgba(0,255,136,0.2); }
-.badge-low   { background: rgba(255,107,0,0.1);  color: var(--accent2); border: 1px solid rgba(255,107,0,0.2); }
+.badge-low { background: rgba(255,107,0,0.1); color: var(--accent2); border: 1px solid rgba(255,107,0,0.2); }
 
 /* ── PREBUILTS ── */
-#prebuilts { background: var(--dark); }
-
-.prebuilt-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 24px;
-}
-
-.prebuilt-card {
-  background: var(--card);
-  border: 1px solid var(--border);
-  overflow: hidden;
-  transition: all 0.25s;
-  position: relative;
-}
-
-.prebuilt-card:hover {
-  border-color: var(--accent);
-  transform: translateY(-4px);
-  box-shadow: 0 16px 48px rgba(0,212,255,0.1);
-}
-
-.prebuilt-tier {
-  position: absolute; top: 16px; left: 16px; z-index: 2;
-  font-family: var(--font-condensed);
-  font-size: 0.7rem; font-weight: 700;
-  letter-spacing: 2px; text-transform: uppercase;
-  padding: 4px 12px;
-}
-
-.tier-budget   { background: var(--border); color: var(--muted); }
-.tier-mid      { background: rgba(0,212,255,0.15); color: var(--accent); border: 1px solid rgba(0,212,255,0.3); }
-.tier-high     { background: rgba(255,107,0,0.15); color: var(--accent2); border: 1px solid rgba(255,107,0,0.3); }
+.prebuilt-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 24px; }
+.prebuilt-card { background: var(--card); border: 1px solid var(--border); overflow: hidden; transition: all 0.25s; position: relative; }
+.prebuilt-card:hover { border-color: var(--accent); transform: translateY(-4px); box-shadow: 0 16px 48px rgba(0,212,255,0.1); }
+.prebuilt-tier { position: absolute; top: 16px; left: 16px; z-index: 2; font-family: var(--font-condensed); font-size: 0.7rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; padding: 4px 12px; }
+.tier-budget { background: var(--border); color: var(--muted); }
+.tier-mid { background: rgba(0,212,255,0.15); color: var(--accent); border: 1px solid rgba(0,212,255,0.3); }
+.tier-high { background: rgba(255,107,0,0.15); color: var(--accent2); border: 1px solid rgba(255,107,0,0.3); }
 .tier-flagship { background: linear-gradient(90deg,#ffd700,#ff6b00); color: #000; }
-.tier-b2b      { background: rgba(0,255,136,0.15); color: var(--green); border: 1px solid rgba(0,255,136,0.3); }
-
-.prebuilt-img {
-  width: 100%; height: 220px;
-  object-fit: cover; object-position: center;
-  background: #0a0e16;
-}
-
+.tier-b2b { background: rgba(0,255,136,0.15); color: var(--green); border: 1px solid rgba(0,255,136,0.3); }
+.prebuilt-img-placeholder { width: 100%; height: 220px; display: flex; align-items: center; justify-content: center; font-size: 4rem; }
 .prebuilt-body { padding: 24px; }
-
-.prebuilt-name {
-  font-family: var(--font-display);
-  font-size: 1.5rem; letter-spacing: 1px;
-  color: var(--white); margin-bottom: 4px;
-}
-
-.prebuilt-tagline {
-  font-size: 0.82rem; color: var(--accent);
-  margin-bottom: 16px;
-  font-family: var(--font-condensed);
-  letter-spacing: 1px;
-}
-
-.prebuilt-specs {
-  list-style: none; margin-bottom: 20px;
-}
-
-.prebuilt-specs li {
-  font-size: 0.82rem; color: var(--muted);
-  padding: 5px 0;
-  border-bottom: 1px solid var(--border);
-  display: flex; align-items: center; gap: 8px;
-}
-
+.prebuilt-name { font-family: var(--font-display); font-size: 1.5rem; letter-spacing: 1px; color: var(--white); margin-bottom: 4px; }
+.prebuilt-tagline { font-size: 0.82rem; color: var(--accent); margin-bottom: 16px; font-family: var(--font-condensed); letter-spacing: 1px; }
+.prebuilt-specs { list-style: none; margin-bottom: 20px; }
+.prebuilt-specs li { font-size: 0.82rem; color: var(--muted); padding: 5px 0; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 8px; }
 .prebuilt-specs li::before { content: '▸'; color: var(--accent); font-size: 0.65rem; }
-
-.prebuilt-footer {
-  display: flex; align-items: center; justify-content: space-between;
-  padding-top: 16px;
-}
-
-.prebuilt-price {
-  font-family: var(--font-display);
-  font-size: 2rem; color: var(--white);
-}
-
-.prebuilt-price span {
-  font-size: 0.9rem; color: var(--muted);
-  font-family: var(--font-body); font-weight: 300;
-}
-
-.btn-order {
-  background: var(--accent); color: var(--black);
-  padding: 10px 20px;
-  font-family: var(--font-condensed);
-  font-size: 0.8rem; font-weight: 700;
-  letter-spacing: 1px; text-transform: uppercase;
-  border: none; cursor: pointer;
-  transition: all 0.2s;
-}
+.prebuilt-footer { display: flex; align-items: center; justify-content: space-between; padding-top: 16px; }
+.prebuilt-price { font-family: var(--font-display); font-size: 2rem; color: var(--white); }
+.prebuilt-price span { font-size: 0.9rem; color: var(--muted); font-family: var(--font-body); font-weight: 300; }
+.btn-order { background: var(--accent); color: var(--black); padding: 10px 20px; font-family: var(--font-condensed); font-size: 0.8rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; border: none; cursor: pointer; transition: all 0.2s; }
 .btn-order:hover { background: #00b8d9; }
 
-/* ── BRANDED PCS ── */
-#branded { background: var(--black); }
-
-/* ── B2B SECTION ── */
-#b2b {
-  background: var(--dark);
-  position: relative; overflow: hidden;
-}
-
-.b2b-inner {
-  display: grid; grid-template-columns: 1fr 1fr;
-  gap: 80px; align-items: center;
-}
-
+/* ── B2B ── */
+.b2b-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
 .b2b-perks { display: flex; flex-direction: column; gap: 24px; margin-top: 40px; }
-
-.perk {
-  display: flex; gap: 20px; align-items: flex-start;
-  padding: 20px; background: var(--card); border: 1px solid var(--border);
-  transition: border-color 0.2s;
-}
+.perk { display: flex; gap: 20px; align-items: flex-start; padding: 20px; background: var(--card); border: 1px solid var(--border); transition: border-color 0.2s; }
 .perk:hover { border-color: var(--accent); }
-
-.perk-icon { font-size: 1.5rem; flex-shrink: 0; margin-top: 2px; }
-
-.perk-title {
-  font-family: var(--font-condensed);
-  font-size: 0.95rem; font-weight: 600;
-  letter-spacing: 1px;
-  color: var(--white); margin-bottom: 4px;
-}
-
+.perk-icon { font-size: 1.5rem; flex-shrink: 0; }
+.perk-title { font-family: var(--font-condensed); font-size: 0.95rem; font-weight: 600; letter-spacing: 1px; color: var(--white); margin-bottom: 4px; }
 .perk-desc { font-size: 0.82rem; color: var(--muted); line-height: 1.6; }
-
-.b2b-form-box {
-  background: var(--card);
-  border: 1px solid var(--border);
-  padding: 40px;
-}
-
-.b2b-form-box h3 {
-  font-family: var(--font-display);
-  font-size: 1.8rem; letter-spacing: 1px;
-  margin-bottom: 8px;
-}
-
-.b2b-form-box p {
-  font-size: 0.85rem; color: var(--muted);
-  margin-bottom: 28px; line-height: 1.6;
-}
-
+.b2b-form-box { background: var(--card); border: 1px solid var(--border); padding: 40px; }
+.b2b-form-box h3 { font-family: var(--font-display); font-size: 1.8rem; letter-spacing: 1px; margin-bottom: 8px; }
+.b2b-form-box p { font-size: 0.85rem; color: var(--muted); margin-bottom: 28px; line-height: 1.6; }
 .form-group { margin-bottom: 16px; }
-
-.form-group label {
-  display: block;
-  font-family: var(--font-condensed);
-  font-size: 0.75rem; font-weight: 600;
-  letter-spacing: 1.5px; text-transform: uppercase;
-  color: var(--muted); margin-bottom: 8px;
-}
-
-.form-group input, .form-group select, .form-group textarea {
-  width: 100%; padding: 12px 16px;
-  background: var(--black); color: var(--white);
-  border: 1px solid var(--border); outline: none;
-  font-family: var(--font-body); font-size: 0.9rem;
-  transition: border-color 0.2s;
-}
-
-.form-group input:focus, .form-group select:focus, .form-group textarea:focus {
-  border-color: var(--accent);
-}
-
+.form-group label { display: block; font-family: var(--font-condensed); font-size: 0.75rem; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
+.form-group input, .form-group select, .form-group textarea { width: 100%; padding: 12px 16px; background: var(--black); color: var(--white); border: 1px solid var(--border); outline: none; font-family: var(--font-body); font-size: 0.9rem; transition: border-color 0.2s; }
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--accent); }
 .form-group textarea { resize: vertical; min-height: 100px; }
 
 /* ── WHY US ── */
-#why { background: var(--black); }
-
-.why-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-  gap: 24px;
-}
-
-.why-card {
-  background: var(--card);
-  border: 1px solid var(--border);
-  padding: 32px 24px;
-  transition: all 0.25s;
-  position: relative; overflow: hidden;
-}
-
-.why-card::before {
-  content: '';
-  position: absolute; top: 0; left: 0; right: 0; height: 2px;
-  background: var(--accent);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.3s;
-}
-
+.why-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 24px; }
+.why-card { background: var(--card); border: 1px solid var(--border); padding: 32px 24px; transition: all 0.25s; position: relative; overflow: hidden; }
+.why-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: var(--accent); transform: scaleX(0); transform-origin: left; transition: transform 0.3s; }
 .why-card:hover::before { transform: scaleX(1); }
 .why-card:hover { border-color: rgba(0,212,255,0.3); }
-
-.why-num {
-  font-family: var(--font-display);
-  font-size: 3rem; color: rgba(0,212,255,0.12);
-  line-height: 1; margin-bottom: 16px;
-}
-
-.why-title {
-  font-family: var(--font-condensed);
-  font-size: 1rem; font-weight: 600;
-  letter-spacing: 1px; text-transform: uppercase;
-  color: var(--white); margin-bottom: 10px;
-}
-
+.why-num { font-family: var(--font-display); font-size: 3rem; color: rgba(0,212,255,0.12); line-height: 1; margin-bottom: 16px; }
+.why-title { font-family: var(--font-condensed); font-size: 1rem; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: var(--white); margin-bottom: 10px; }
 .why-desc { font-size: 0.85rem; color: var(--muted); line-height: 1.7; }
 
 /* ── PAYMENT ── */
-#payment { background: var(--dark); }
-
-.payment-grid {
-  display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-  gap: 16px;
-}
-
-.payment-card {
-  background: var(--card); border: 1px solid var(--border);
-  padding: 24px 20px; text-align: center;
-  transition: border-color 0.2s;
-}
-
+.payment-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 16px; }
+.payment-card { background: var(--card); border: 1px solid var(--border); padding: 24px 20px; text-align: center; transition: border-color 0.2s; }
 .payment-card:hover { border-color: var(--accent); }
-
 .payment-icon { font-size: 2rem; margin-bottom: 10px; }
-
-.payment-name {
-  font-family: var(--font-condensed);
-  font-size: 0.85rem; font-weight: 600;
-  letter-spacing: 1px; text-transform: uppercase;
-  color: var(--white); margin-bottom: 4px;
-}
-
+.payment-name { font-family: var(--font-condensed); font-size: 0.85rem; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: var(--white); margin-bottom: 4px; }
 .payment-note { font-size: 0.75rem; color: var(--muted); }
 
 /* ── FAQ ── */
-#faq { background: var(--black); }
-
 .faq-list { max-width: 800px; }
-
-.faq-item {
-  border-bottom: 1px solid var(--border);
-  overflow: hidden;
-}
-
-.faq-q {
-  width: 100%; padding: 20px 0;
-  display: flex; justify-content: space-between; align-items: center;
-  background: none; border: none; color: var(--white); cursor: pointer;
-  font-family: var(--font-condensed); font-size: 0.95rem; font-weight: 600;
-  letter-spacing: 0.5px; text-align: left;
-  transition: color 0.2s;
-}
+.faq-item { border-bottom: 1px solid var(--border); overflow: hidden; }
+.faq-q { width: 100%; padding: 20px 0; display: flex; justify-content: space-between; align-items: center; background: none; border: none; color: var(--white); cursor: pointer; font-family: var(--font-condensed); font-size: 0.95rem; font-weight: 600; letter-spacing: 0.5px; text-align: left; transition: color 0.2s; }
 .faq-q:hover { color: var(--accent); }
-
-.faq-arrow {
-  width: 24px; height: 24px; flex-shrink: 0;
-  border: 1px solid var(--border);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 0.75rem; transition: all 0.3s;
-  color: var(--accent);
-}
-
+.faq-arrow { width: 24px; height: 24px; flex-shrink: 0; border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 0.75rem; transition: all 0.3s; color: var(--accent); }
 .faq-item.open .faq-arrow { transform: rotate(45deg); background: var(--accent); color: var(--black); border-color: var(--accent); }
-
-.faq-a {
-  max-height: 0; overflow: hidden;
-  transition: max-height 0.35s ease, padding 0.35s ease;
-  font-size: 0.88rem; color: var(--muted); line-height: 1.7;
-}
-
+.faq-a { max-height: 0; overflow: hidden; transition: max-height 0.35s ease, padding 0.35s ease; font-size: 0.88rem; color: var(--muted); line-height: 1.7; }
 .faq-item.open .faq-a { max-height: 300px; padding-bottom: 20px; }
 
 /* ── CONTACT ── */
-#contact { background: var(--dark); }
-
-.contact-grid {
-  display: grid; grid-template-columns: 1fr 1fr;
-  gap: 60px; align-items: start;
-}
-
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
 .contact-info { display: flex; flex-direction: column; gap: 20px; }
-
-.contact-item {
-  display: flex; gap: 16px; align-items: flex-start;
-  padding: 20px; background: var(--card); border: 1px solid var(--border);
-}
-
+.contact-item { display: flex; gap: 16px; align-items: flex-start; padding: 20px; background: var(--card); border: 1px solid var(--border); }
 .contact-item-icon { font-size: 1.4rem; flex-shrink: 0; }
-
-.contact-item-label {
-  font-family: var(--font-condensed);
-  font-size: 0.7rem; font-weight: 600;
-  letter-spacing: 2px; text-transform: uppercase;
-  color: var(--accent); margin-bottom: 4px;
-}
-
-.contact-item-value {
-  font-size: 0.9rem; color: var(--white); line-height: 1.6;
-}
+.contact-item-label { font-family: var(--font-condensed); font-size: 0.7rem; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); margin-bottom: 4px; }
+.contact-item-value { font-size: 0.9rem; color: var(--white); line-height: 1.6; }
 
 /* ── FOOTER ── */
-footer {
-  background: var(--black);
-  border-top: 1px solid var(--border);
-  padding: 40px;
-  display: flex; justify-content: space-between; align-items: center;
-  flex-wrap: wrap; gap: 20px;
-}
-
-.footer-logo {
-  font-family: var(--font-display);
-  font-size: 1.4rem; letter-spacing: 2px;
-}
+footer { background: var(--black); border-top: 1px solid var(--border); padding: 40px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
+.footer-logo { font-family: var(--font-display); font-size: 1.4rem; letter-spacing: 2px; }
 .footer-logo span { color: var(--accent); }
-
 .footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
-.footer-links a {
-  font-family: var(--font-condensed);
-  font-size: 0.78rem; font-weight: 600;
-  letter-spacing: 1.5px; text-transform: uppercase;
-  color: var(--muted); text-decoration: none;
-  transition: color 0.2s;
-}
+.footer-links a { font-family: var(--font-condensed); font-size: 0.78rem; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.2s; }
 .footer-links a:hover { color: var(--accent); }
+.footer-copy { font-size: 0.78rem; color: var(--muted); font-family: var(--font-condensed); }
 
-.footer-copy {
-  font-size: 0.78rem; color: var(--muted);
-  font-family: var(--font-condensed);
-}
-
-/* ── CHAT WIDGET ── */
+/* ══════════════════════
+   CHAT WIDGET
+   ══════════════════════ */
 #chat-toggle {
   position: fixed; bottom: 28px; right: 28px; z-index: 999;
-  width: 60px; height: 60px; border-radius: 50%;
+  width: 62px; height: 62px; border-radius: 50%;
   background: var(--accent); color: var(--black);
   border: none; cursor: pointer; font-size: 1.5rem;
   display: flex; align-items: center; justify-content: center;
@@ -726,134 +203,49 @@ footer {
   transition: all 0.25s;
 }
 #chat-toggle:hover { transform: scale(1.08); background: #00b8d9; }
-
-.chat-pulse {
-  position: absolute; top: -4px; right: -4px;
-  width: 16px; height: 16px; border-radius: 50%;
-  background: var(--accent2);
-  animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-  0%,100% { transform: scale(1); opacity: 1; }
-  50% { transform: scale(1.4); opacity: 0.6; }
-}
+.chat-pulse { position: absolute; top: -4px; right: -4px; width: 16px; height: 16px; border-radius: 50%; background: var(--accent2); animation: pulse 2s infinite; }
+@keyframes pulse { 0%,100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.4); opacity: 0.6; } }
 
 #chat-window {
-  position: fixed; bottom: 100px; right: 28px; z-index: 998;
-  width: 380px; max-height: 600px;
+  position: fixed; bottom: 104px; right: 28px; z-index: 998;
+  width: 390px; max-height: 620px;
   background: var(--dark); border: 1px solid var(--border);
   display: flex; flex-direction: column;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.6);
-  transform: scale(0.9) translateY(20px);
-  opacity: 0; pointer-events: none;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.6), 0 0 40px rgba(0,212,255,0.08);
+  transform: scale(0.9) translateY(20px); opacity: 0; pointer-events: none;
   transition: all 0.3s cubic-bezier(0.34,1.56,0.64,1);
 }
+#chat-window.open { transform: scale(1) translateY(0); opacity: 1; pointer-events: all; }
 
-#chat-window.open {
-  transform: scale(1) translateY(0);
-  opacity: 1; pointer-events: all;
-}
-
-.chat-header {
-  background: var(--accent); color: var(--black);
-  padding: 16px 20px;
-  display: flex; align-items: center; gap: 12px;
-}
-
+.chat-header { background: var(--accent); color: var(--black); padding: 16px 20px; display: flex; align-items: center; gap: 12px; }
 .chat-header-icon { font-size: 1.4rem; }
-
-.chat-header-info h4 {
-  font-family: var(--font-condensed);
-  font-size: 0.95rem; font-weight: 700;
-  letter-spacing: 1px;
-}
-
+.chat-header-info h4 { font-family: var(--font-condensed); font-size: 0.95rem; font-weight: 700; letter-spacing: 1px; }
 .chat-header-info p { font-size: 0.72rem; font-weight: 600; opacity: 0.75; }
-
-.chat-close {
-  margin-left: auto; background: none; border: none;
-  color: var(--black); font-size: 1.1rem; cursor: pointer;
-  width: 28px; height: 28px;
-  display: flex; align-items: center; justify-content: center;
-  border-radius: 50%; transition: background 0.2s;
-}
+.chat-close { margin-left: auto; background: none; border: none; color: var(--black); font-size: 1.1rem; cursor: pointer; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; border-radius: 50%; transition: background 0.2s; }
 .chat-close:hover { background: rgba(0,0,0,0.15); }
 
-.chat-messages {
-  flex: 1; overflow-y: auto; padding: 20px;
-  display: flex; flex-direction: column; gap: 12px;
-  max-height: 380px;
-}
-
+.chat-messages { flex: 1; overflow-y: auto; padding: 20px; display: flex; flex-direction: column; gap: 12px; max-height: 380px; scroll-behavior: smooth; }
 .chat-messages::-webkit-scrollbar { width: 3px; }
 .chat-messages::-webkit-scrollbar-thumb { background: var(--border); }
 
-.msg {
-  max-width: 85%; padding: 10px 14px;
-  font-size: 0.85rem; line-height: 1.5;
-  animation: msgIn 0.3s ease;
-}
-
+.msg { max-width: 85%; padding: 10px 14px; font-size: 0.85rem; line-height: 1.55; animation: msgIn 0.3s ease; }
 @keyframes msgIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+.msg-bot { background: var(--card); color: var(--white); border: 1px solid var(--border); border-radius: 0 12px 12px 12px; align-self: flex-start; }
+.msg-user { background: var(--accent); color: var(--black); font-weight: 600; border-radius: 12px 12px 0 12px; align-self: flex-end; }
 
-.msg-bot {
-  background: var(--card); color: var(--white);
-  border: 1px solid var(--border);
-  border-radius: 0 12px 12px 12px;
-  align-self: flex-start;
-}
-
-.msg-user {
-  background: var(--accent); color: var(--black);
-  font-weight: 600;
-  border-radius: 12px 12px 0 12px;
-  align-self: flex-end;
-}
-
-.chat-options {
-  padding: 0 20px 12px;
-  display: flex; flex-wrap: wrap; gap: 8px;
-}
-
-.chat-opt-btn {
-  background: var(--card); color: var(--white);
-  border: 1px solid var(--border);
-  padding: 7px 14px;
-  font-family: var(--font-condensed);
-  font-size: 0.75rem; font-weight: 600;
-  letter-spacing: 0.5px;
-  cursor: pointer; transition: all 0.2s;
-}
-
+.chat-options { padding: 0 20px 12px; display: flex; flex-wrap: wrap; gap: 8px; }
+.chat-opt-btn { background: var(--card); color: var(--white); border: 1px solid var(--border); padding: 7px 14px; font-family: var(--font-condensed); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.5px; cursor: pointer; transition: all 0.2s; }
 .chat-opt-btn:hover { border-color: var(--accent); color: var(--accent); }
+.chat-opt-btn:disabled { opacity: 0.4; cursor: default; }
 
-.chat-input-row {
-  display: flex; gap: 0;
-  border-top: 1px solid var(--border);
-}
-
-.chat-input {
-  flex: 1; padding: 14px 16px;
-  background: var(--black); color: var(--white);
-  border: none; outline: none;
-  font-family: var(--font-body); font-size: 0.88rem;
-}
-
+.chat-input-row { display: flex; border-top: 1px solid var(--border); }
+.chat-input { flex: 1; padding: 14px 16px; background: var(--black); color: var(--white); border: none; outline: none; font-family: var(--font-body); font-size: 0.88rem; }
 .chat-input::placeholder { color: var(--muted); }
-
-.chat-send {
-  background: var(--accent); color: var(--black);
-  border: none; padding: 0 20px; cursor: pointer;
-  font-size: 1rem; transition: background 0.2s;
-}
+.chat-send { background: var(--accent); color: var(--black); border: none; padding: 0 20px; cursor: pointer; font-size: 1rem; transition: background 0.2s; }
 .chat-send:hover { background: #00b8d9; }
 
 .typing-indicator { display: flex; gap: 4px; align-items: center; padding: 4px 0; }
-.typing-indicator span {
-  width: 6px; height: 6px; border-radius: 50%;
-  background: var(--muted); animation: typing 1.2s infinite;
-}
+.typing-indicator span { width: 6px; height: 6px; border-radius: 50%; background: var(--muted); animation: typing 1.2s infinite; }
 .typing-indicator span:nth-child(2) { animation-delay: 0.2s; }
 .typing-indicator span:nth-child(3) { animation-delay: 0.4s; }
 @keyframes typing { 0%,60%,100% { opacity: 0.3; transform: translateY(0); } 30% { opacity: 1; transform: translateY(-4px); } }
@@ -863,16 +255,11 @@ footer {
   nav { padding: 0 20px; }
   .nav-links { display: none; }
   .nav-hamburger { display: flex; }
-
   .hero { padding: 80px 20px 60px; }
   .hero-stats { display: none; }
-
   section { padding: 60px 20px; }
-
   .b2b-inner, .contact-grid { grid-template-columns: 1fr; gap: 40px; }
-
-  #chat-window { width: calc(100vw - 32px); right: 16px; bottom: 90px; }
-
+  #chat-window { width: calc(100vw - 32px); right: 16px; bottom: 96px; }
   footer { flex-direction: column; text-align: center; padding: 30px 20px; }
 }
 </style>
@@ -889,7 +276,7 @@ footer {
     <li><a href="#b2b">B2B</a></li>
     <li><a href="#payment">Payment</a></li>
     <li><a href="#contact">Contact</a></li>
-    <li><a href="#" class="nav-cta" id="nav-build-btn">Build My PC</a></li>
+    <li><a href="#" class="nav-cta" id="nav-build-btn">⚡ Build My PC</a></li>
   </ul>
   <div class="nav-hamburger" onclick="toggleMobileMenu()">
     <span></span><span></span><span></span>
@@ -902,11 +289,7 @@ footer {
   <div class="hero-grid"></div>
   <div class="hero-content">
     <div class="hero-eyebrow">BGC, Taguig · Est. 2024</div>
-    <h1>
-      BUILD YOUR<br>
-      <span class="line2">POWER.</span>
-      <span class="line3">Own Your Machine.</span>
-    </h1>
+    <h1>BUILD YOUR<br><span class="line2">POWER.</span><span class="line3">Own Your Machine.</span></h1>
     <p class="hero-sub">Custom PCs, components, and workstations for gamers, creators, and businesses. Powered by AI — built for performance.</p>
     <div class="hero-actions">
       <button class="btn-primary" id="hero-ai-btn">⚡ AI PC Builder</button>
@@ -922,7 +305,7 @@ footer {
 
 <!-- TICKER -->
 <div class="ticker">
-  <div class="ticker-inner" id="ticker-inner">
+  <div class="ticker-inner">
     <span class="ticker-item">⚡ Free Assembly on All Prebuilts</span>
     <span class="ticker-item">🎮 RTX 4060 · RTX 4070 · RTX 4090 — In Stock</span>
     <span class="ticker-item">💼 B2B Bulk Orders · Special Pricing Available</span>
@@ -944,92 +327,84 @@ footer {
   <div class="section-title">SHOP COMPONENTS</div>
   <p class="section-sub">Everything you need to build or upgrade your rig — all in stock at our BGC store.</p>
   <div class="cat-grid">
-    <a href="#products" class="cat-card" onclick="filterProducts('cpu')"><div class="cat-icon">🔲</div><div class="cat-name">CPU</div><div class="cat-count">12 Products</div></a>
-    <a href="#products" class="cat-card" onclick="filterProducts('gpu')"><div class="cat-icon">🎮</div><div class="cat-name">GPU</div><div class="cat-count">17 Products</div></a>
-    <a href="#products" class="cat-card" onclick="filterProducts('motherboard')"><div class="cat-icon">🖥️</div><div class="cat-name">Motherboard</div><div class="cat-count">9 Products</div></a>
-    <a href="#products" class="cat-card" onclick="filterProducts('ram')"><div class="cat-icon">💾</div><div class="cat-name">RAM</div><div class="cat-count">10 Products</div></a>
-    <a href="#products" class="cat-card" onclick="filterProducts('storage')"><div class="cat-icon">💿</div><div class="cat-name">Storage</div><div class="cat-count">14 Products</div></a>
-    <a href="#products" class="cat-card" onclick="filterProducts('psu')"><div class="cat-icon">⚡</div><div class="cat-name">PSU</div><div class="cat-count">8 Products</div></a>
-    <a href="#products" class="cat-card" onclick="filterProducts('case')"><div class="cat-icon">📦</div><div class="cat-name">Cases</div><div class="cat-count">9 Products</div></a>
-    <a href="#products" class="cat-card" onclick="filterProducts('cooler')"><div class="cat-icon">❄️</div><div class="cat-name">Coolers</div><div class="cat-count">9 Products</div></a>
-    <a href="#products" class="cat-card" onclick="filterProducts('monitor')"><div class="cat-icon">🖱️</div><div class="cat-name">Monitors</div><div class="cat-count">7 Products</div></a>
-    <a href="#products" class="cat-card" onclick="filterProducts('peripherals')"><div class="cat-icon">⌨️</div><div class="cat-name">Peripherals</div><div class="cat-count">12 Products</div></a>
+    <a href="#products" class="cat-card" onclick="filterProducts('cpu',null)"><div class="cat-icon">🔲</div><div class="cat-name">CPU</div><div class="cat-count">12 Products</div></a>
+    <a href="#products" class="cat-card" onclick="filterProducts('gpu',null)"><div class="cat-icon">🎮</div><div class="cat-name">GPU</div><div class="cat-count">17 Products</div></a>
+    <a href="#products" class="cat-card" onclick="filterProducts('motherboard',null)"><div class="cat-icon">🖥️</div><div class="cat-name">Motherboard</div><div class="cat-count">9 Products</div></a>
+    <a href="#products" class="cat-card" onclick="filterProducts('ram',null)"><div class="cat-icon">💾</div><div class="cat-name">RAM</div><div class="cat-count">10 Products</div></a>
+    <a href="#products" class="cat-card" onclick="filterProducts('storage',null)"><div class="cat-icon">💿</div><div class="cat-name">Storage</div><div class="cat-count">14 Products</div></a>
+    <a href="#products" class="cat-card" onclick="filterProducts('psu',null)"><div class="cat-icon">⚡</div><div class="cat-name">PSU</div><div class="cat-count">8 Products</div></a>
+    <a href="#products" class="cat-card" onclick="filterProducts('case',null)"><div class="cat-icon">📦</div><div class="cat-name">Cases</div><div class="cat-count">9 Products</div></a>
+    <a href="#products" class="cat-card" onclick="filterProducts('cooler',null)"><div class="cat-icon">❄️</div><div class="cat-name">Coolers</div><div class="cat-count">9 Products</div></a>
+    <a href="#products" class="cat-card" onclick="filterProducts('monitor',null)"><div class="cat-icon">🖱️</div><div class="cat-name">Monitors</div><div class="cat-count">7 Products</div></a>
+    <a href="#products" class="cat-card" onclick="filterProducts('peripherals',null)"><div class="cat-icon">⌨️</div><div class="cat-name">Peripherals</div><div class="cat-count">12 Products</div></a>
   </div>
 </section>
 
 <!-- PRODUCTS -->
-<section id="products">
+<section id="products" style="background:var(--black)">
   <div class="section-label">Components</div>
   <div class="section-title">FEATURED PARTS</div>
   <p class="section-sub">Top picks from our full inventory. Visit the store or ask our AI bot to build around specific parts.</p>
-
   <div class="product-tabs">
-    <button class="tab-btn active" onclick="filterProducts('all', this)">All</button>
-    <button class="tab-btn" onclick="filterProducts('cpu', this)">CPU</button>
-    <button class="tab-btn" onclick="filterProducts('gpu', this)">GPU</button>
-    <button class="tab-btn" onclick="filterProducts('motherboard', this)">Motherboard</button>
-    <button class="tab-btn" onclick="filterProducts('ram', this)">RAM</button>
-    <button class="tab-btn" onclick="filterProducts('storage', this)">Storage</button>
-    <button class="tab-btn" onclick="filterProducts('psu', this)">PSU</button>
-    <button class="tab-btn" onclick="filterProducts('case', this)">Cases</button>
-    <button class="tab-btn" onclick="filterProducts('cooler', this)">Coolers</button>
+    <button class="tab-btn active" onclick="filterProducts('all',this)">All</button>
+    <button class="tab-btn" onclick="filterProducts('cpu',this)">CPU</button>
+    <button class="tab-btn" onclick="filterProducts('gpu',this)">GPU</button>
+    <button class="tab-btn" onclick="filterProducts('motherboard',this)">Motherboard</button>
+    <button class="tab-btn" onclick="filterProducts('ram',this)">RAM</button>
+    <button class="tab-btn" onclick="filterProducts('storage',this)">Storage</button>
+    <button class="tab-btn" onclick="filterProducts('psu',this)">PSU</button>
+    <button class="tab-btn" onclick="filterProducts('case',this)">Cases</button>
+    <button class="tab-btn" onclick="filterProducts('cooler',this)">Coolers</button>
   </div>
-
-  <div class="products-grid" id="products-grid">
-    <!-- Products injected by JS -->
-  </div>
+  <div class="products-grid" id="products-grid"></div>
 </section>
 
 <!-- PREBUILTS -->
-<section id="prebuilts">
+<section id="prebuilts" style="background:var(--dark)">
   <div class="section-label">Ready To Go</div>
   <div class="section-title">PREBUILT PCS</div>
   <p class="section-sub">Tested, assembled, and ready for pickup. All builds include free assembly, cable management, and a 1-year warranty.</p>
-  <div class="prebuilt-grid" id="prebuilts-grid">
-    <!-- Prebuilts injected by JS -->
-  </div>
+  <div class="prebuilt-grid" id="prebuilts-grid"></div>
 </section>
 
 <!-- BRANDED PCS -->
-<section id="branded" style="background:var(--dark)">
+<section id="branded" style="background:var(--black)">
   <div class="section-label">Corporate & Office</div>
   <div class="section-title">BRANDED DESKTOPS</div>
   <p class="section-sub">Top-brand desktops from HP, Lenovo, Acer, and Dell — perfect for office deployments, call centers, and corporate environments.</p>
-  <div class="products-grid" id="branded-grid">
-    <!-- Branded PCs injected by JS -->
-  </div>
+  <div class="products-grid" id="branded-grid"></div>
 </section>
 
 <!-- B2B -->
-<section id="b2b">
+<section id="b2b" style="background:var(--dark)">
   <div class="b2b-inner">
     <div>
       <div class="section-label">Business Solutions</div>
       <div class="section-title">B2B & BULK ORDERS</div>
       <p class="section-sub">Special pricing, bulk discounts, and on-site service agreements for businesses across Metro Manila.</p>
       <div class="b2b-perks">
-        <div class="perk"><div class="perk-icon">💰</div><div><div class="perk-title">Bulk Discounts</div><div class="perk-desc">3–5% off for 5+ units · 8–12% off for 20+ units. Volume pricing negotiable for large deployments.</div></div></div>
+        <div class="perk"><div class="perk-icon">💰</div><div><div class="perk-title">Bulk Discounts</div><div class="perk-desc">3–5% off for 5+ units · 8–12% off for 20+ units. Volume pricing negotiable.</div></div></div>
         <div class="perk"><div class="perk-icon">🔧</div><div><div class="perk-title">On-Site Service</div><div class="perk-desc">Warranty repairs and maintenance at your office. Response within 24 hours within Metro Manila.</div></div></div>
-        <div class="perk"><div class="perk-icon">📄</div><div><div class="perk-title">Purchase Orders</div><div class="perk-desc">POs accepted from registered companies. Net-15 payment terms for accredited partners.</div></div></div>
-        <div class="perk"><div class="perk-icon">⚙️</div><div><div class="perk-title">Custom Configs</div><div class="perk-desc">Spec workstations for your exact workflow — CAD, dev, video, data, or office use cases.</div></div></div>
+        <div class="perk"><div class="perk-icon">📄</div><div><div class="perk-title">Purchase Orders Accepted</div><div class="perk-desc">POs accepted from registered companies. Net-15 payment terms for accredited partners.</div></div></div>
+        <div class="perk"><div class="perk-icon">⚙️</div><div><div class="perk-title">Custom Configurations</div><div class="perk-desc">Spec workstations for your exact workflow — CAD, dev, video, data, or office use cases.</div></div></div>
       </div>
     </div>
     <div class="b2b-form-box">
       <h3>REQUEST A QUOTE</h3>
       <p>Fill in your requirements and our B2B team will respond within 2 business hours.</p>
-      <div class="form-group"><label>Company Name</label><input type="text" placeholder="e.g. Acme Corporation"></div>
-      <div class="form-group"><label>Contact Person</label><input type="text" placeholder="Your full name"></div>
-      <div class="form-group"><label>Email Address</label><input type="email" placeholder="you@company.com"></div>
-      <div class="form-group"><label>Phone Number</label><input type="tel" placeholder="+63 9XX XXX XXXX"></div>
-      <div class="form-group"><label>Number of Units</label><input type="number" placeholder="e.g. 10" min="1"></div>
-      <div class="form-group"><label>Use Case / Requirements</label><textarea placeholder="e.g. Office workstations for 20 staff, video editing rigs, call center PCs..."></textarea></div>
+      <div class="form-group"><label>Company Name</label><input type="text" id="b2b-company" placeholder="e.g. Acme Corporation"></div>
+      <div class="form-group"><label>Contact Person</label><input type="text" id="b2b-contact" placeholder="Your full name"></div>
+      <div class="form-group"><label>Email Address</label><input type="email" id="b2b-email" placeholder="you@company.com"></div>
+      <div class="form-group"><label>Phone Number</label><input type="tel" id="b2b-phone" placeholder="+63 9XX XXX XXXX"></div>
+      <div class="form-group"><label>Number of Units</label><input type="number" id="b2b-units" placeholder="e.g. 10" min="1"></div>
+      <div class="form-group"><label>Use Case / Requirements</label><textarea id="b2b-notes" placeholder="e.g. Office workstations for 20 staff, video editing rigs, call center PCs..."></textarea></div>
       <button class="btn-primary" style="width:100%;justify-content:center" onclick="submitB2BForm()">Submit Quote Request →</button>
     </div>
   </div>
 </section>
 
 <!-- WHY US -->
-<section id="why">
+<section id="why" style="background:var(--black)">
   <div class="section-label">Why TechFactory PH</div>
   <div class="section-title">BUILT DIFFERENT</div>
   <p class="section-sub">We're not just a parts store. We're your PC building partner.</p>
@@ -1044,7 +419,7 @@ footer {
 </section>
 
 <!-- PAYMENT -->
-<section id="payment">
+<section id="payment" style="background:var(--dark)">
   <div class="section-label">Flexible Options</div>
   <div class="section-title">PAYMENT METHODS</div>
   <p class="section-sub">We accept all major payment methods — in-store and online.</p>
@@ -1061,16 +436,14 @@ footer {
 </section>
 
 <!-- FAQ -->
-<section id="faq">
+<section id="faq" style="background:var(--black)">
   <div class="section-label">Common Questions</div>
   <div class="section-title">FAQ</div>
-  <div class="faq-list" id="faq-list">
-    <!-- FAQs injected by JS -->
-  </div>
+  <div class="faq-list" id="faq-list"></div>
 </section>
 
 <!-- CONTACT -->
-<section id="contact">
+<section id="contact" style="background:var(--dark)">
   <div class="section-label">Get In Touch</div>
   <div class="section-title">CONTACT US</div>
   <div class="contact-grid">
@@ -1084,9 +457,9 @@ footer {
     <div style="background:var(--card);border:1px solid var(--border);padding:40px;">
       <h3 style="font-family:var(--font-display);font-size:1.8rem;letter-spacing:1px;margin-bottom:8px;">SEND A MESSAGE</h3>
       <p style="font-size:0.85rem;color:var(--muted);margin-bottom:28px;line-height:1.6;">Questions about a build? Need a quote? Just want to know if a part is in stock? We reply within 2 hours.</p>
-      <div class="form-group"><label>Your Name</label><input type="text" placeholder="Full name"></div>
-      <div class="form-group"><label>Email</label><input type="email" placeholder="your@email.com"></div>
-      <div class="form-group"><label>Message</label><textarea placeholder="Ask anything about parts, builds, or services..."></textarea></div>
+      <div class="form-group"><label>Your Name</label><input type="text" id="ct-name" placeholder="Full name"></div>
+      <div class="form-group"><label>Email</label><input type="email" id="ct-email" placeholder="your@email.com"></div>
+      <div class="form-group"><label>Message</label><textarea id="ct-msg" placeholder="Ask anything about parts, builds, or services..."></textarea></div>
       <button class="btn-primary" style="width:100%;justify-content:center" onclick="submitContactForm()">Send Message →</button>
     </div>
   </div>
@@ -1117,7 +490,7 @@ footer {
   <div class="chat-header">
     <div class="chat-header-icon">⚡</div>
     <div class="chat-header-info">
-      <h4>TECHFACTORY AI</h4>
+      <h4>TECHFACTORY AI BUILDER</h4>
       <p>PC Builder Bot · Usually replies instantly</p>
     </div>
     <button class="chat-close" onclick="toggleChat()">✕</button>
@@ -1125,124 +498,149 @@ footer {
   <div class="chat-messages" id="chat-messages"></div>
   <div class="chat-options" id="chat-options"></div>
   <div class="chat-input-row">
-    <input type="text" class="chat-input" id="chat-input" placeholder="Type a message..." onkeydown="if(event.key==='Enter') sendChatMessage()">
+    <input type="text" class="chat-input" id="chat-input" placeholder="Type a message..." disabled onkeydown="if(event.key==='Enter')sendChatMessage()">
     <button class="chat-send" onclick="sendChatMessage()">➤</button>
   </div>
 </div>
 
 <script>
-// ── APPS SCRIPT URL ──────────────────────────────────────────
-const APPS_SCRIPT_URL = 'REPLACE_WITH_YOUR_APPS_SCRIPT_EXEC_URL';
+// ══════════════════════════════════════════════
+// !! REPLACE THIS WITH YOUR APPS SCRIPT URL !!
+const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbx181aXXYPfb_Q0CnUvKQFNd8h6_1bMqwli5oFMRAjsIKXrbW7NSn5RIsiCZDFShMZY/exec';
+// ══════════════════════════════════════════════
 
-// ── PRODUCTS DATA ─────────────────────────────────────────────
+// ── DATA ─────────────────────────────────────────────────────
 const products = [
-  // CPU
-  { id: 1, cat: 'cpu', name: 'Intel Core i5-13400F', specs: '10C/16T · up to 4.6GHz · LGA1700', price: '₱8,500', stock: 'in', img: 'https://m.media-amazon.com/images/I/61oVMpGOWBL._AC_SL1500_.jpg', icon: '🔲' },
-  { id: 2, cat: 'cpu', name: 'Intel Core i7-14700K', specs: '20C/28T · up to 5.6GHz · LGA1700', price: '₱22,000', stock: 'in', img: 'https://m.media-amazon.com/images/I/71jOPVbpPHL._AC_SL1500_.jpg', icon: '🔲' },
-  { id: 3, cat: 'cpu', name: 'AMD Ryzen 7 7700X', specs: '8C/16T · up to 5.4GHz · AM5', price: '₱16,500', stock: 'in', img: 'https://m.media-amazon.com/images/I/51u4s5FxPHL._AC_SL1500_.jpg', icon: '🔲' },
-  { id: 4, cat: 'cpu', name: 'Intel Core i9-14900K', specs: '24C/32T · up to 6.0GHz · LGA1700', price: '₱36,000', stock: 'in', img: 'https://m.media-amazon.com/images/I/71jOPVbpPHL._AC_SL1500_.jpg', icon: '🔲' },
-  // GPU
-  { id: 5, cat: 'gpu', name: 'NVIDIA RTX 4060 8GB', specs: '8GB GDDR6 · 1080p Gaming · DLSS 3', price: '₱18,000', stock: 'in', img: 'https://m.media-amazon.com/images/I/81jIUGV0bNL._AC_SL1500_.jpg', icon: '🎮' },
-  { id: 6, cat: 'gpu', name: 'NVIDIA RTX 4070 12GB', specs: '12GB GDDR6X · 1440p/4K · DLSS 3', price: '₱34,000', stock: 'in', img: 'https://m.media-amazon.com/images/I/81jIUGV0bNL._AC_SL1500_.jpg', icon: '🎮' },
-  { id: 7, cat: 'gpu', name: 'NVIDIA RTX 4080 Super 16GB', specs: '16GB GDDR6X · 4K Ultra · DLSS 3', price: '₱72,000', stock: 'in', img: 'https://m.media-amazon.com/images/I/81jIUGV0bNL._AC_SL1500_.jpg', icon: '🎮' },
-  { id: 8, cat: 'gpu', name: 'AMD RX 7800 XT 16GB', specs: '16GB GDDR6 · 1440p/4K · FSR 3', price: '₱28,500', stock: 'in', img: 'https://m.media-amazon.com/images/I/81jIUGV0bNL._AC_SL1500_.jpg', icon: '🎮' },
-  // Motherboard
-  { id: 9, cat: 'motherboard', name: 'ASUS ROG Strix B760-F', specs: 'ATX · B760 · DDR5 · 4x M.2 · PCIe 5.0', price: '₱12,500', stock: 'in', img: 'https://m.media-amazon.com/images/I/81jIUGV0bNL._AC_SL1500_.jpg', icon: '🖥️' },
-  { id: 10, cat: 'motherboard', name: 'MSI MPG Z790 Carbon', specs: 'ATX · Z790 · DDR5 · 5x M.2 · PCIe 5.0', price: '₱18,000', stock: 'in', img: 'https://m.media-amazon.com/images/I/81jIUGV0bNL._AC_SL1500_.jpg', icon: '🖥️' },
-  // RAM
-  { id: 11, cat: 'ram', name: 'Corsair Vengeance 16GB DDR4', specs: 'DDR4 · 3600MHz · CL18 · 2x8GB Kit', price: '₱2,800', stock: 'in', img: 'https://m.media-amazon.com/images/I/71u3-XBh6-L._AC_SL1500_.jpg', icon: '💾' },
-  { id: 12, cat: 'ram', name: 'G.Skill Trident Z5 32GB DDR5', specs: 'DDR5 · 6400MHz · CL32 · RGB · 2x16GB', price: '₱9,200', stock: 'in', img: 'https://m.media-amazon.com/images/I/71u3-XBh6-L._AC_SL1500_.jpg', icon: '💾' },
-  // Storage
-  { id: 13, cat: 'storage', name: 'Samsung 990 Pro 2TB NVMe', specs: 'M.2 NVMe PCIe 4.0 · 7450MB/s read', price: '₱8,500', stock: 'in', img: 'https://m.media-amazon.com/images/I/71u3-XBh6-L._AC_SL1500_.jpg', icon: '💿' },
-  { id: 14, cat: 'storage', name: 'WD Black SN770 1TB', specs: 'M.2 NVMe PCIe 4.0 · 5150MB/s read', price: '₱3,500', stock: 'in', img: 'https://m.media-amazon.com/images/I/71u3-XBh6-L._AC_SL1500_.jpg', icon: '💿' },
-  // PSU
-  { id: 15, cat: 'psu', name: 'Corsair RM750x 750W Gold', specs: '80+ Gold · Fully Modular · 750W', price: '₱5,500', stock: 'in', img: 'https://m.media-amazon.com/images/I/71u3-XBh6-L._AC_SL1500_.jpg', icon: '⚡' },
-  { id: 16, cat: 'psu', name: 'Seasonic Focus GX 850W Gold', specs: '80+ Gold · Fully Modular · 850W', price: '₱6,500', stock: 'in', img: 'https://m.media-amazon.com/images/I/71u3-XBh6-L._AC_SL1500_.jpg', icon: '⚡' },
-  // Cases
-  { id: 17, cat: 'case', name: 'Lian Li O11 Dynamic EVO', specs: 'ATX · Dual Chamber · Tempered Glass', price: '₱8,500', stock: 'in', img: 'https://m.media-amazon.com/images/I/71u3-XBh6-L._AC_SL1500_.jpg', icon: '📦' },
-  { id: 18, cat: 'case', name: 'Corsair 5000D Airflow', specs: 'ATX Mid Tower · High Airflow · 2 Fans', price: '₱7,800', stock: 'in', img: 'https://m.media-amazon.com/images/I/71u3-XBh6-L._AC_SL1500_.jpg', icon: '📦' },
-  // Coolers
-  { id: 19, cat: 'cooler', name: 'NZXT Kraken X73 360mm', specs: 'AIO Liquid · 3x 120mm · LCD Display', price: '₱10,500', stock: 'low', img: 'https://m.media-amazon.com/images/I/71u3-XBh6-L._AC_SL1500_.jpg', icon: '❄️' },
-  { id: 20, cat: 'cooler', name: 'Noctua NH-D15', specs: 'Dual Tower Air · 2x 140mm · LGA1700/AM5', price: '₱5,500', stock: 'in', img: 'https://m.media-amazon.com/images/I/71u3-XBh6-L._AC_SL1500_.jpg', icon: '❄️' },
+  { cat:'cpu',  name:'Intel Core i3-12100F',     specs:'4C/8T · up to 4.3GHz · LGA1700',        price:'₱4,500',  stock:'in',  icon:'🔲' },
+  { cat:'cpu',  name:'Intel Core i5-13400F',     specs:'10C/16T · up to 4.6GHz · LGA1700',      price:'₱8,500',  stock:'in',  icon:'🔲' },
+  { cat:'cpu',  name:'Intel Core i5-13600K',     specs:'14C/20T · up to 5.1GHz · LGA1700',      price:'₱13,500', stock:'in',  icon:'🔲' },
+  { cat:'cpu',  name:'Intel Core i7-14700K',     specs:'20C/28T · up to 5.6GHz · LGA1700',      price:'₱22,000', stock:'in',  icon:'🔲' },
+  { cat:'cpu',  name:'Intel Core i9-14900K',     specs:'24C/32T · up to 6.0GHz · LGA1700',      price:'₱36,000', stock:'in',  icon:'🔲' },
+  { cat:'cpu',  name:'AMD Ryzen 5 7600X',        specs:'6C/12T · up to 5.3GHz · AM5',           price:'₱11,500', stock:'in',  icon:'🔲' },
+  { cat:'cpu',  name:'AMD Ryzen 7 7700X',        specs:'8C/16T · up to 5.4GHz · AM5',           price:'₱16,500', stock:'in',  icon:'🔲' },
+  { cat:'cpu',  name:'AMD Ryzen 9 7900X',        specs:'12C/24T · up to 5.6GHz · AM5',          price:'₱24,000', stock:'in',  icon:'🔲' },
+  { cat:'gpu',  name:'NVIDIA RTX 3060 12GB',     specs:'12GB GDDR6 · 1080p Gaming',             price:'₱14,500', stock:'in',  icon:'🎮' },
+  { cat:'gpu',  name:'NVIDIA RTX 4060 8GB',      specs:'8GB GDDR6 · 1080p · DLSS 3',           price:'₱18,000', stock:'in',  icon:'🎮' },
+  { cat:'gpu',  name:'NVIDIA RTX 4060 Ti 8GB',   specs:'8GB GDDR6 · 1440p · DLSS 3',           price:'₱24,500', stock:'in',  icon:'🎮' },
+  { cat:'gpu',  name:'NVIDIA RTX 4070 12GB',     specs:'12GB GDDR6X · 1440p/4K · DLSS 3',      price:'₱34,000', stock:'in',  icon:'🎮' },
+  { cat:'gpu',  name:'NVIDIA RTX 4070 Super',    specs:'12GB GDDR6X · 1440p/4K · DLSS 3',      price:'₱38,000', stock:'in',  icon:'🎮' },
+  { cat:'gpu',  name:'NVIDIA RTX 4080 Super',    specs:'16GB GDDR6X · 4K Ultra · DLSS 3',      price:'₱72,000', stock:'in',  icon:'🎮' },
+  { cat:'gpu',  name:'NVIDIA RTX 4090 24GB',     specs:'24GB GDDR6X · Flagship 4K · DLSS 3',   price:'₱115,000',stock:'low', icon:'🎮' },
+  { cat:'gpu',  name:'AMD RX 7600 8GB',          specs:'8GB GDDR6 · 1080p · FSR 3',            price:'₱15,500', stock:'in',  icon:'🎮' },
+  { cat:'gpu',  name:'AMD RX 7800 XT 16GB',      specs:'16GB GDDR6 · 1440p/4K · FSR 3',        price:'₱28,500', stock:'in',  icon:'🎮' },
+  { cat:'motherboard', name:'MSI PRO B660M-A',   specs:'mATX · B660 · DDR4 · 2x M.2',          price:'₱5,500',  stock:'in',  icon:'🖥️' },
+  { cat:'motherboard', name:'MSI MAG B660 Tomahawk', specs:'ATX · B660 · DDR4 · 3x M.2',       price:'₱8,500',  stock:'in',  icon:'🖥️' },
+  { cat:'motherboard', name:'ASUS ROG Strix B760-F', specs:'ATX · B760 · DDR5 · 4x M.2 · PCIe 5.0', price:'₱12,500', stock:'in', icon:'🖥️' },
+  { cat:'motherboard', name:'MSI MPG Z790 Carbon',   specs:'ATX · Z790 · DDR5 · 5x M.2 · PCIe 5.0', price:'₱18,000', stock:'in', icon:'🖥️' },
+  { cat:'motherboard', name:'MSI MAG X670E Tomahawk', specs:'ATX · X670E · DDR5 · 4x M.2 · AM5',   price:'₱16,500', stock:'in', icon:'🖥️' },
+  { cat:'ram',  name:'Kingston Fury 16GB DDR4',  specs:'DDR4 · 3200MHz · CL16 · 2x8GB',        price:'₱2,200',  stock:'in',  icon:'💾' },
+  { cat:'ram',  name:'Corsair Vengeance 16GB DDR4', specs:'DDR4 · 3600MHz · CL18 · 2x8GB',    price:'₱2,800',  stock:'in',  icon:'💾' },
+  { cat:'ram',  name:'Kingston Fury 32GB DDR4',  specs:'DDR4 · 3200MHz · CL16 · 2x16GB',       price:'₱4,200',  stock:'in',  icon:'💾' },
+  { cat:'ram',  name:'Corsair Dominator 32GB DDR5', specs:'DDR5 · 6000MHz · CL36 · 2x16GB',    price:'₱7,500',  stock:'in',  icon:'💾' },
+  { cat:'ram',  name:'G.Skill Trident Z5 32GB DDR5', specs:'DDR5 · 6400MHz · CL32 · RGB · 2x16GB', price:'₱9,200', stock:'in', icon:'💾' },
+  { cat:'storage', name:'Kingston NV2 1TB NVMe', specs:'M.2 PCIe 4.0 · 3500MB/s read',        price:'₱2,800',  stock:'in',  icon:'💿' },
+  { cat:'storage', name:'WD Black SN770 1TB',    specs:'M.2 PCIe 4.0 · 5150MB/s read',        price:'₱3,500',  stock:'in',  icon:'💿' },
+  { cat:'storage', name:'Samsung 980 Pro 1TB',   specs:'M.2 PCIe 4.0 · 7000MB/s read',        price:'₱4,500',  stock:'in',  icon:'💿' },
+  { cat:'storage', name:'Samsung 990 Pro 2TB',   specs:'M.2 PCIe 4.0 · 7450MB/s read',        price:'₱8,500',  stock:'in',  icon:'💿' },
+  { cat:'storage', name:'Seagate Barracuda 2TB HDD', specs:'7200RPM · SATA III',              price:'₱2,800',  stock:'in',  icon:'💿' },
+  { cat:'psu',  name:'Seasonic Focus GX 650W',   specs:'80+ Gold · Fully Modular',             price:'₱4,800',  stock:'in',  icon:'⚡' },
+  { cat:'psu',  name:'Corsair RM750x 750W',      specs:'80+ Gold · Fully Modular',             price:'₱5,500',  stock:'in',  icon:'⚡' },
+  { cat:'psu',  name:'Seasonic Focus GX 850W',   specs:'80+ Gold · Fully Modular',             price:'₱6,500',  stock:'in',  icon:'⚡' },
+  { cat:'psu',  name:'Corsair HX1000 1000W',     specs:'80+ Platinum · Fully Modular',         price:'₱9,500',  stock:'in',  icon:'⚡' },
+  { cat:'case', name:'NZXT H510',                specs:'ATX Mid Tower · Tempered Glass · 2 Fans', price:'₱4,200', stock:'in', icon:'📦' },
+  { cat:'case', name:'Lian Li Lancool III',      specs:'ATX Mid Tower · 3x 140mm · High Airflow', price:'₱6,500', stock:'in', icon:'📦' },
+  { cat:'case', name:'Corsair 5000D Airflow',    specs:'ATX Mid Tower · High Airflow · 2 Fans',  price:'₱7,800', stock:'in', icon:'📦' },
+  { cat:'case', name:'Lian Li O11 Dynamic EVO',  specs:'ATX · Dual Chamber · Tempered Glass',    price:'₱8,500', stock:'in', icon:'📦' },
+  { cat:'cooler', name:'Cooler Master Hyper 212', specs:'Air Tower · 120mm · LGA1700/AM5',      price:'₱1,800',  stock:'in',  icon:'❄️' },
+  { cat:'cooler', name:'Noctua NH-D15',          specs:'Dual Tower Air · 2x 140mm · LGA1700/AM5', price:'₱5,500', stock:'in', icon:'❄️' },
+  { cat:'cooler', name:'Corsair H100i 240mm AIO', specs:'AIO Liquid · 2x 120mm · LGA1700/AM5', price:'₱5,800',  stock:'in',  icon:'❄️' },
+  { cat:'cooler', name:'Corsair H150i 360mm AIO', specs:'AIO Liquid · 3x 120mm · LGA1700/AM5', price:'₱8,500',  stock:'in',  icon:'❄️' },
+  { cat:'cooler', name:'NZXT Kraken X73 360mm',  specs:'AIO Liquid · 3x 120mm · LCD Display',  price:'₱10,500', stock:'low', icon:'❄️' },
+  { cat:'monitor', name:'AOC 24G2 24"',          specs:'1080p · 144Hz · IPS · 1ms · FreeSync',  price:'₱7,500',  stock:'in',  icon:'🖱️' },
+  { cat:'monitor', name:'LG 27GP850-B 27"',      specs:'1440p · 165Hz · Nano IPS · G-Sync Compatible', price:'₱16,500', stock:'in', icon:'🖱️' },
+  { cat:'monitor', name:'LG 27GP950-B 27"',      specs:'4K · 160Hz · Nano IPS · G-Sync Compatible',    price:'₱32,000', stock:'in', icon:'🖱️' },
+  { cat:'peripherals', name:'Keychron K2 (Red Switch)', specs:'TKL Wireless Mechanical · RGB',   price:'₱3,500',  stock:'in',  icon:'⌨️' },
+  { cat:'peripherals', name:'Razer DeathAdder V3',       specs:'Wired · 30000 DPI · Ergonomic',  price:'₱3,200',  stock:'in',  icon:'⌨️' },
+  { cat:'peripherals', name:'Logitech G502 X Plus',      specs:'Wireless · 25600 DPI · LIGHTFORCE', price:'₱5,800', stock:'in', icon:'⌨️' },
+  { cat:'peripherals', name:'HyperX Cloud Stinger 2',    specs:'Wired · 7.1 Surround · Swivel Mic', price:'₱2,200', stock:'in', icon:'⌨️' },
 ];
 
 const brandedPCs = [
-  { name: 'HP EliteDesk 800 G9', specs: 'Intel Core i5-12500 · 16GB DDR5 · 512GB NVMe · Win11 Pro', price: '₱38,500', stock: 'in', img: 'https://ssl-product-images.www8-hp.com/digmedialib/prodimg/lookup/c08111477.png', cat: 'HP Business', tag: 'Best Seller' },
-  { name: 'HP ProDesk 400 G9 SFF', specs: 'Intel Core i3-12100 · 8GB DDR4 · 256GB NVMe · Win11 Pro', price: '₱24,500', stock: 'in', img: 'https://ssl-product-images.www8-hp.com/digmedialib/prodimg/lookup/c08111477.png', cat: 'HP Business', tag: 'Budget Pick' },
-  { name: 'Lenovo ThinkCentre M70s', specs: 'Intel Core i5-12400 · 16GB DDR4 · 512GB SSD · Win11 Pro', price: '₱36,000', stock: 'in', img: 'https://p3-ofp.static.pub/ShareResource/na/subseries/hero/lenovo-pcs-thinkcentre-m70s-hero.png', cat: 'Lenovo Business', tag: '' },
-  { name: 'Lenovo ThinkCentre M90s', specs: 'Intel Core i7-12700 · 32GB DDR5 · 1TB NVMe · Win11 Pro', price: '₱58,000', stock: 'in', img: 'https://p3-ofp.static.pub/ShareResource/na/subseries/hero/lenovo-pcs-thinkcentre-m70s-hero.png', cat: 'Lenovo Business', tag: 'Workstation' },
-  { name: 'Acer Veriton X4680G', specs: 'Intel Core i5-11400 · 8GB DDR4 · 512GB SSD · Win11 Pro', price: '₱22,000', stock: 'in', img: 'https://static.acer.com/up/Resource/Acer/Series/Veriton_X4/Designs/20210202/Veriton_X4680G.png', cat: 'Acer Business', tag: '' },
-  { name: 'Acer Veriton X6680G', specs: 'Intel Core i7-11700 · 16GB DDR4 · 1TB SSD · Win11 Pro', price: '₱42,000', stock: 'in', img: 'https://static.acer.com/up/Resource/Acer/Series/Veriton_X4/Designs/20210202/Veriton_X4680G.png', cat: 'Acer Business', tag: '' },
-  { name: 'Dell OptiPlex 7010 SFF', specs: 'Intel Core i5-13500 · 16GB DDR5 · 512GB NVMe · Win11 Pro', price: '₱40,000', stock: 'in', img: 'https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/desktops/optiplex-desktops/7010/media-gallery/desktop-optiplex-7010-sff-gallery-1.psd?fmt=png-alpha', cat: 'Dell Business', tag: '' },
-  { name: 'Dell OptiPlex 7090 Tower', specs: 'Intel Core i7-11700 · 32GB DDR4 · 1TB SSD · Win11 Pro', price: '₱55,000', stock: 'low', img: 'https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/desktops/optiplex-desktops/7010/media-gallery/desktop-optiplex-7010-sff-gallery-1.psd?fmt=png-alpha', cat: 'Dell Business', tag: 'Low Stock' },
+  { cat:'HP Business',     name:'HP EliteDesk 800 G9',       specs:'Intel Core i5-12500 · 16GB DDR5 · 512GB NVMe · Win11 Pro',  price:'₱38,500', stock:'in',  tag:'Best Seller', icon:'🖥️' },
+  { cat:'HP Business',     name:'HP ProDesk 400 G9 SFF',      specs:'Intel Core i3-12100 · 8GB DDR4 · 256GB NVMe · Win11 Pro',  price:'₱24,500', stock:'in',  tag:'Budget Pick', icon:'🖥️' },
+  { cat:'HP Business',     name:'HP EliteDesk 800 G9 Tower',  specs:'Intel Core i7-12700 · 32GB DDR5 · 1TB NVMe · Win11 Pro',   price:'₱55,000', stock:'in',  tag:'',            icon:'🖥️' },
+  { cat:'Lenovo Business', name:'Lenovo ThinkCentre M70s',    specs:'Intel Core i5-12400 · 16GB DDR4 · 512GB SSD · Win11 Pro',  price:'₱36,000', stock:'in',  tag:'',            icon:'🖥️' },
+  { cat:'Lenovo Business', name:'Lenovo ThinkCentre M90s',    specs:'Intel Core i7-12700 · 32GB DDR5 · 1TB NVMe · Win11 Pro',   price:'₱58,000', stock:'in',  tag:'Workstation', icon:'🖥️' },
+  { cat:'Lenovo Business', name:'Lenovo ThinkStation P360',   specs:'Intel Core i9-12900 · 64GB DDR5 · 2TB NVMe · Win11 Pro',   price:'₱95,000', stock:'low', tag:'Workstation', icon:'🖥️' },
+  { cat:'Acer Business',   name:'Acer Veriton X4680G',        specs:'Intel Core i5-11400 · 8GB DDR4 · 512GB SSD · Win11 Pro',   price:'₱22,000', stock:'in',  tag:'',            icon:'🖥️' },
+  { cat:'Acer Business',   name:'Acer Veriton X6680G',        specs:'Intel Core i7-11700 · 16GB DDR4 · 1TB SSD · Win11 Pro',    price:'₱42,000', stock:'in',  tag:'',            icon:'🖥️' },
+  { cat:'Dell Business',   name:'Dell OptiPlex 7010 SFF',     specs:'Intel Core i5-13500 · 16GB DDR5 · 512GB NVMe · Win11 Pro', price:'₱40,000', stock:'in',  tag:'',            icon:'🖥️' },
+  { cat:'Dell Business',   name:'Dell OptiPlex 7090 Tower',   specs:'Intel Core i7-11700 · 32GB DDR4 · 1TB SSD · Win11 Pro',    price:'₱55,000', stock:'low', tag:'',            icon:'🖥️' },
+  { cat:'Dell Business',   name:'Dell Precision 3660 Tower',  specs:'Intel Core i9-12900 · 64GB DDR5 · 2TB NVMe · Win11 Pro',   price:'₱110,000',stock:'in',  tag:'Workstation', icon:'🖥️' },
 ];
 
 const prebuilts = [
-  { name: 'TF-Budget-Office', tagline: 'Reliable everyday computing', tier: 'budget', price: '₱18,500', specs: ['Intel Core i3-12100F', '8GB DDR4 3200MHz', '500GB NVMe SSD', 'MSI PRO B660M-A', 'Cooler Master TD300', 'Corsair CV650 650W'], bestFor: 'Office work, web browsing, light applications', img: 'https://images.unsplash.com/photo-1587831990711-23ca6441447b?w=600&q=80' },
-  { name: 'TF-Budget-Gaming', tagline: '1080p gaming under ₱30K', tier: 'budget', price: '₱28,500', specs: ['Intel Core i5-13400F', '16GB DDR4 3200MHz', '1TB NVMe SSD', 'RTX 3060 12GB', 'NZXT H510', 'Seasonic Focus GX 650W'], bestFor: '1080p gaming, esports titles', img: 'https://images.unsplash.com/photo-1593640495253-23196b27a87f?w=600&q=80' },
-  { name: 'TF-Mid-Gaming', tagline: '1440p powerhouse', tier: 'mid', price: '₱52,000', specs: ['Intel Core i5-13600K', '32GB DDR4 3600MHz', '1TB NVMe + 2TB HDD', 'RTX 4070 12GB', 'Lian Li Lancool III', 'Corsair RM750x 750W'], bestFor: '1440p gaming, streaming, content creation', img: 'https://images.unsplash.com/photo-1593640495253-23196b27a87f?w=600&q=80' },
-  { name: 'TF-Mid-Creator', tagline: 'Built for creators', tier: 'mid', price: '₱58,000', specs: ['AMD Ryzen 7 7700X', '32GB DDR5 6000MHz', '2TB NVMe SSD', 'RTX 4070 Super 12GB', 'Corsair H150i 360mm AIO', 'Corsair RM750x 750W'], bestFor: 'Video editing, 3D rendering, streaming', img: 'https://images.unsplash.com/photo-1591488320449-011701bb6704?w=600&q=80' },
-  { name: 'TF-Pro-Gaming', tagline: '4K ready beast', tier: 'high', price: '₱95,000', specs: ['Intel Core i7-14700K', '32GB DDR5 6000MHz', '2TB NVMe SSD', 'RTX 4080 Super 16GB', 'Lian Li O11 Dynamic EVO', 'Corsair HX1000 1000W'], bestFor: '4K gaming, high refresh 1440p, content creation', img: 'https://images.unsplash.com/photo-1593640495253-23196b27a87f?w=600&q=80' },
-  { name: 'TF-Flagship', tagline: 'No compromises', tier: 'flagship', price: '₱145,000', specs: ['Intel Core i9-14900K', '64GB DDR5 6000MHz', '2TB NVMe + 4TB HDD', 'RTX 4090 24GB', 'Corsair 5000D Airflow', 'Corsair AX1600i 1600W'], bestFor: '4K ultra gaming, professional workstation, AI/ML', img: 'https://images.unsplash.com/photo-1587831990711-23ca6441447b?w=600&q=80' },
-  { name: 'TF-B2B-Office Pack', tagline: 'Corporate deployment ready', tier: 'b2b', price: '₱15,000/unit', specs: ['Intel Core i5-13400F', '16GB DDR4 3200MHz', '512GB NVMe SSD', 'MSI PRO B660M-A', 'No discrete GPU', 'Min. 10 units'], bestFor: 'Call centers, office deployments, corporate workstations', img: 'https://images.unsplash.com/photo-1587831990711-23ca6441447b?w=600&q=80' },
-  { name: 'TF-B2B-Workstation', tagline: 'Professional grade power', tier: 'b2b', price: '₱85,000/unit', specs: ['AMD Ryzen 9 7950X', '64GB DDR5 6000MHz', '2TB NVMe + 4TB HDD', 'RTX 4080 Super 16GB', 'NZXT Kraken X73 360mm', 'Seasonic Prime TX 1000W'], bestFor: 'Engineering workstations, video production, CAD/CAM', img: 'https://images.unsplash.com/photo-1591488320449-011701bb6704?w=600&q=80' },
+  { name:'TF-Budget-Office',    tagline:'Reliable everyday computing',   tier:'budget',   price:'₱18,500',       icon:'💼', specs:['Intel Core i3-12100F','8GB DDR4 3200MHz','500GB NVMe SSD','MSI PRO B660M-A','Corsair CV650 650W PSU'],             bestFor:'Office work, web browsing, light apps' },
+  { name:'TF-Budget-Gaming',    tagline:'1080p gaming under ₱30K',       tier:'budget',   price:'₱28,500',       icon:'🎮', specs:['Intel Core i5-13400F','16GB DDR4 3200MHz','1TB NVMe SSD','RTX 3060 12GB','Seasonic Focus GX 650W'],               bestFor:'1080p gaming, esports titles' },
+  { name:'TF-Mid-Gaming',       tagline:'1440p powerhouse',               tier:'mid',      price:'₱52,000',       icon:'🎮', specs:['Intel Core i5-13600K','32GB DDR4 3600MHz','1TB NVMe + 2TB HDD','RTX 4070 12GB','Corsair RM750x 750W'],           bestFor:'1440p gaming, streaming, content creation' },
+  { name:'TF-Mid-Creator',      tagline:'Built for creators',             tier:'mid',      price:'₱58,000',       icon:'🎬', specs:['AMD Ryzen 7 7700X','32GB DDR5 6000MHz','2TB NVMe SSD','RTX 4070 Super 12GB','Corsair H150i 360mm AIO'],          bestFor:'Video editing, 3D rendering, streaming' },
+  { name:'TF-Pro-Gaming',       tagline:'4K ready beast',                 tier:'high',     price:'₱95,000',       icon:'🔥', specs:['Intel Core i7-14700K','32GB DDR5 6000MHz','2TB NVMe SSD','RTX 4080 Super 16GB','Corsair HX1000 1000W'],          bestFor:'4K gaming, high refresh 1440p, content creation' },
+  { name:'TF-Flagship',         tagline:'No compromises',                 tier:'flagship', price:'₱145,000',      icon:'👑', specs:['Intel Core i9-14900K','64GB DDR5 6000MHz','2TB NVMe + 4TB HDD','RTX 4090 24GB','Corsair AX1600i 1600W'],         bestFor:'4K ultra gaming, professional workstation, AI/ML' },
+  { name:'TF-B2B-Office Pack',  tagline:'Corporate deployment ready',     tier:'b2b',      price:'₱15,000/unit',  icon:'🏢', specs:['Intel Core i5-13400F','16GB DDR4 3200MHz','512GB NVMe SSD','MSI PRO B660M-A','Min. 10 units'],                    bestFor:'Call centers, office deployments, corporate workstations' },
+  { name:'TF-B2B-Workstation',  tagline:'Professional grade power',       tier:'b2b',      price:'₱85,000/unit',  icon:'⚙️', specs:['AMD Ryzen 9 7950X','64GB DDR5 6000MHz','2TB NVMe + 4TB HDD','RTX 4080 Super 16GB','Seasonic Prime TX 1000W'],    bestFor:'Engineering workstations, video production, CAD/CAM' },
 ];
 
 const faqs = [
-  { q: 'Do you offer PC building services?', a: 'Yes! We offer full PC assembly for ₱500 (standard) or ₱1,000 (complex/custom). Includes cable management and basic testing.' },
-  { q: 'Can I bring my own parts for assembly?', a: 'Yes, we accept bring-your-own-parts (BYOP) assembly at ₱800 flat fee. Parts warranty is between you and the manufacturer.' },
-  { q: 'Do you offer 0% installment?', a: 'Yes, 0% installment is available via BDO, BPI, and Metrobank credit cards for 3, 6, or 12 months on purchases ₱5,000 and above.' },
-  { q: 'Can you upgrade my existing PC?', a: 'Absolutely! Bring your unit to our store for a free compatibility assessment. Upgrade services start at ₱300.' },
-  { q: 'Do you ship nationwide?', a: 'Yes, we ship via LBC, J&T, or Ninja Van. Fragile items (monitors, prebuilts) via Lalamove only within Metro Manila.' },
-  { q: 'How long does a custom build take?', a: 'Standard builds: 1–2 business days. Complex builds (custom loop, RGB management): 3–5 business days.' },
-  { q: 'What is your warranty policy?', a: 'All parts and prebuilts carry a 1-year warranty against manufacturing defects. B2B clients get on-site service within Metro Manila.' },
-  { q: 'Do you buy second-hand parts?', a: 'We do not currently buy used parts. We only sell brand new items.' },
-  { q: 'What if a part is out of stock?', a: 'We can order it for you. ETAs vary from 3–7 business days. No payment required until the item arrives.' },
-  { q: 'Do you have a physical showroom?', a: 'Yes! Visit us at G/F Bonifacio High Street Central, BGC, Taguig. Working demo builds are on display.' },
+  { q:'Do you offer PC building services?',       a:'Yes! Assembly is ₱500 for standard builds and ₱1,000 for complex/custom. Includes cable management and testing.' },
+  { q:'Can I bring my own parts for assembly?',   a:'Yes, BYOP assembly is ₱800 flat. Parts warranty is between you and the manufacturer.' },
+  { q:'Do you offer 0% installment?',             a:'Yes, via BDO, BPI, and Metrobank credit cards for 3, 6, or 12 months on purchases ₱5,000 and above.' },
+  { q:'Can you upgrade my existing PC?',          a:'Absolutely! Bring your unit for a free compatibility check. Upgrade services start at ₱300.' },
+  { q:'Do you ship nationwide?',                  a:'Yes via LBC, J&T, or Ninja Van. Prebuilts and monitors ship via Lalamove within Metro Manila only.' },
+  { q:'How long does a custom build take?',       a:'Standard builds: 1–2 business days. Complex builds: 3–5 business days. We stress-test before handover.' },
+  { q:'What is your warranty policy?',            a:'All parts and prebuilts carry a 1-year warranty. B2B clients get on-site service within Metro Manila.' },
+  { q:'Do you buy second-hand parts?',            a:'We do not buy used parts. We only sell brand new items.' },
+  { q:'What if a part is out of stock?',          a:'We can order it — ETAs vary from 3–7 business days. No payment required until the item arrives.' },
+  { q:'Do you have a physical showroom?',         a:'Yes! Visit us at G/F Bonifacio High Street Central, BGC, Taguig. Working demo builds on display.' },
 ];
 
 // ── RENDER PRODUCTS ───────────────────────────────────────────
-function renderProducts(filter = 'all') {
+function renderProducts(filter, btn) {
+  if (btn) {
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+  }
   const grid = document.getElementById('products-grid');
-  const filtered = filter === 'all' ? products : products.filter(p => p.cat === filter);
-  grid.innerHTML = filtered.map(p => `
+  const list = filter === 'all' ? products : products.filter(p => p.cat === filter);
+  grid.innerHTML = list.map(p => `
     <div class="product-card">
-      <div class="product-img-placeholder" style="background:linear-gradient(135deg,#0a0e16,#111620)">
-        <span style="font-size:3rem">${p.icon}</span>
-      </div>
+      <div class="product-img-placeholder"><span>${p.icon}</span></div>
       <div class="product-body">
         <div class="product-category">${p.cat.toUpperCase()}</div>
         <div class="product-name">${p.name}</div>
         <div class="product-specs">${p.specs}</div>
         <div class="product-footer">
           <div class="product-price">${p.price}</div>
-          <span class="badge ${p.stock === 'in' ? 'badge-stock' : 'badge-low'}">${p.stock === 'in' ? 'In Stock' : 'Low Stock'}</span>
+          <span class="badge ${p.stock==='in'?'badge-stock':'badge-low'}">${p.stock==='in'?'In Stock':'Low Stock'}</span>
         </div>
       </div>
     </div>
   `).join('');
 }
 
-function filterProducts(cat, btn) {
-  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-  if (btn) btn.classList.add('active');
-  renderProducts(cat);
-}
+function filterProducts(cat, btn) { renderProducts(cat, btn); }
 
-// ── RENDER PREBUILTS ──────────────────────────────────────────
 function renderPrebuilts() {
-  const grid = document.getElementById('prebuilts-grid');
-  grid.innerHTML = prebuilts.map(p => `
+  document.getElementById('prebuilts-grid').innerHTML = prebuilts.map(p => `
     <div class="prebuilt-card">
       <span class="prebuilt-tier tier-${p.tier}">${p.tier.toUpperCase()}</span>
-      <img src="${p.img}" class="prebuilt-img" alt="${p.name}" onerror="this.style.display='none'">
+      <div class="prebuilt-img-placeholder" style="background:linear-gradient(135deg,#0a0e16,#111620)">${p.icon}</div>
       <div class="prebuilt-body">
         <div class="prebuilt-name">${p.name}</div>
         <div class="prebuilt-tagline">${p.tagline}</div>
-        <ul class="prebuilt-specs">${p.specs.map(s => `<li>${s}</li>`).join('')}</ul>
-        <div style="font-size:0.78rem;color:var(--accent);margin-bottom:16px;font-family:var(--font-condensed);letter-spacing:0.5px">✦ Best for: ${p.bestFor}</div>
+        <ul class="prebuilt-specs">${p.specs.map(s=>`<li>${s}</li>`).join('')}</ul>
+        <div style="font-size:0.78rem;color:var(--accent);margin-bottom:16px;font-family:var(--font-condensed)">✦ Best for: ${p.bestFor}</div>
         <div class="prebuilt-footer">
-          <div class="prebuilt-price">${p.price} ${p.tier === 'b2b' ? '' : '<span>/unit</span>'}</div>
+          <div class="prebuilt-price">${p.price}</div>
           <button class="btn-order" onclick="openChatForOrder('${p.name}')">Order Now</button>
         </div>
       </div>
@@ -1250,241 +648,234 @@ function renderPrebuilts() {
   `).join('');
 }
 
-// ── RENDER BRANDED PCs ────────────────────────────────────────
 function renderBranded() {
-  const grid = document.getElementById('branded-grid');
-  grid.innerHTML = brandedPCs.map(p => `
+  document.getElementById('branded-grid').innerHTML = brandedPCs.map(p => `
     <div class="product-card">
-      <div class="product-img-placeholder" style="background:linear-gradient(135deg,#0d1117,#111620)">
-        <span style="font-size:3rem">🖥️</span>
-      </div>
+      <div class="product-img-placeholder" style="background:linear-gradient(135deg,#0d1117,#111620)">${p.icon}</div>
       <div class="product-body">
-        <div class="product-category">${p.cat}${p.tag ? ' · <span style="color:var(--accent2)">' + p.tag + '</span>' : ''}</div>
+        <div class="product-category">${p.cat}${p.tag?` · <span style="color:var(--accent2)">${p.tag}</span>`:''}</div>
         <div class="product-name">${p.name}</div>
         <div class="product-specs">${p.specs}</div>
         <div class="product-footer">
           <div class="product-price">${p.price}</div>
-          <span class="badge ${p.stock === 'in' ? 'badge-stock' : 'badge-low'}">${p.stock === 'in' ? 'In Stock' : 'Low Stock'}</span>
+          <span class="badge ${p.stock==='in'?'badge-stock':'badge-low'}">${p.stock==='in'?'In Stock':'Low Stock'}</span>
         </div>
       </div>
     </div>
   `).join('');
 }
 
-// ── RENDER FAQs ───────────────────────────────────────────────
 function renderFAQs() {
-  const list = document.getElementById('faq-list');
-  list.innerHTML = faqs.map((f, i) => `
+  document.getElementById('faq-list').innerHTML = faqs.map((f,i) => `
     <div class="faq-item" id="faq-${i}">
-      <button class="faq-q" onclick="toggleFAQ(${i})">
-        ${f.q}
-        <span class="faq-arrow">+</span>
-      </button>
+      <button class="faq-q" onclick="toggleFAQ(${i})">${f.q}<span class="faq-arrow">+</span></button>
       <div class="faq-a">${f.a}</div>
     </div>
   `).join('');
 }
 
-function toggleFAQ(i) {
-  const item = document.getElementById('faq-' + i);
-  item.classList.toggle('open');
-}
+function toggleFAQ(i) { document.getElementById('faq-'+i).classList.toggle('open'); }
 
-// ── CHAT WIDGET ───────────────────────────────────────────────
-let chatOpen = false;
-let sessionId = null;
-let currentStep = 'greeting';
-let buildData = {};
-let conversationHistory = [];
+// ══════════════════════════════════════════════════════════════
+// CHAT WIDGET — CORS FIX APPLIED (form-encoded POST)
+// ══════════════════════════════════════════════════════════════
+let chatOpen   = false;
+let sessionId  = null;
+let curStep    = 'greeting';
+let buildData  = {};
+let convHist   = [];
+let chatInited = false;
 
 function toggleChat() {
   chatOpen = !chatOpen;
-  const win = document.getElementById('chat-window');
-  win.classList.toggle('open', chatOpen);
+  document.getElementById('chat-window').classList.toggle('open', chatOpen);
   const toggle = document.getElementById('chat-toggle');
   toggle.innerHTML = chatOpen ? '✕' : '💬<div class="chat-pulse"></div>';
-  if (chatOpen && !sessionId) initChat();
+  if (chatOpen && !chatInited) { chatInited = true; initChat(); }
 }
 
-function openChatForOrder(buildName) {
+function openChatForOrder(name) {
   if (!chatOpen) toggleChat();
+  if (!chatInited) { chatInited = true; initChat(); return; }
   setTimeout(() => {
-    addBotMessage(`Great choice! Let's get your order started for the **${buildName}**. I'll connect you with our team right away.`);
-    showOptions([{ label: '✅ Proceed to Checkout', value: 'checkout' }, { label: '🔙 Main Menu', value: 'menu' }]);
+    addBotMsg(`Great choice! Let's get your order started for the <strong>${name}</strong>.`);
+    showOpts([{ label:'✅ Proceed to Checkout', value:'checkout' }, { label:'🔙 Main Menu', value:'menu' }]);
   }, 300);
 }
 
 async function initChat() {
-  addBotMessage('', true);
+  showTyping();
   try {
     const res = await callBot('', 'greeting');
-    removTyping();
-    handleBotResponse(res);
+    removeTyping();
+    handleResp(res);
   } catch(e) {
-    removTyping();
-    addBotMessage('⚡ Welcome to TechFactory PH! How can I help you today?');
-    showOptions([
-      { label: '🤖 AI Recommended Build', value: 'ai_build' },
-      { label: '🔧 Custom Build', value: 'custom_build' },
-      { label: '🖥️ View Prebuilts', value: 'prebuilts' },
-      { label: '❓ Ask a Question', value: 'ask' },
+    removeTyping();
+    addBotMsg('⚡ Welcome to TechFactory PH! How can I help you today?');
+    showOpts([
+      { label:'🤖 AI Recommended Build', value:'ai_build'     },
+      { label:'🔧 Custom Build',          value:'custom_build' },
+      { label:'🖥️ View Prebuilts',        value:'prebuilts'   },
+      { label:'❓ Ask a Question',        value:'ask'          },
     ]);
   }
 }
 
-async function callBot(message, step, extraData = {}) {
-  const payload = {
-    source: 'widget',
-    message, step,
+// ── THE FIX: use application/x-www-form-urlencoded ───────────
+async function callBot(message, step) {
+  const payload = JSON.stringify({
+    source  : 'widget',
+    message : message,
+    step    : step,
     sessionId,
     buildData,
-    conversationHistory,
-    ...extraData
-  };
+    conversationHistory: convHist
+  });
   const res = await fetch(APPS_SCRIPT_URL, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(payload)
+    method  : 'POST',
+    headers : { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body    : 'payload=' + encodeURIComponent(payload)
   });
   const data = await res.json();
   if (data.sessionId) sessionId = data.sessionId;
   return data;
 }
 
-function handleBotResponse(data) {
-  if (data.reply) addBotMessage(data.reply);
-  if (data.step) currentStep = data.step;
-  if (data.buildData) buildData = data.buildData;
-  if (data.conversationHistory) conversationHistory = data.conversationHistory;
-  if (data.options && data.options.length) showOptions(data.options);
-  const input = document.getElementById('chat-input');
-  input.style.display = data.requireInput ? 'block' : 'none';
-  if (data.placeholder) input.placeholder = data.placeholder;
+function handleResp(data) {
+  if (!data) return;
+  if (data.step)               curStep   = data.step;
+  if (data.buildData)          buildData = data.buildData;
+  if (data.conversationHistory) convHist = data.conversationHistory;
+  if (data.reply) addBotMsg(data.reply);
+  if (data.options && data.options.length) showOpts(data.options);
+  const inp = document.getElementById('chat-input');
+  if (data.requireInput) {
+    inp.disabled    = false;
+    inp.placeholder = data.placeholder || 'Type your message...';
+    inp.focus();
+  } else {
+    inp.disabled    = true;
+    inp.placeholder = 'Select an option above...';
+  }
 }
 
 async function sendChatMessage() {
-  const input = document.getElementById('chat-input');
-  const msg = input.value.trim();
+  const inp = document.getElementById('chat-input');
+  const msg = inp.value.trim();
   if (!msg) return;
-  input.value = '';
-  addUserMessage(msg);
-  clearOptions();
-  addBotMessage('', true);
+  inp.value = ''; inp.disabled = true;
+  addUserMsg(msg);
+  clearOpts();
+  showTyping();
   try {
-    const res = await callBot(msg, currentStep);
-    removTyping();
-    handleBotResponse(res);
+    const res = await callBot(msg, curStep);
+    removeTyping();
+    handleResp(res);
   } catch(e) {
-    removTyping();
-    addBotMessage('Sorry, I had trouble connecting. Please try again or call us at +63 917 123 4567.');
+    removeTyping();
+    addBotMsg('Sorry, I had trouble connecting. Please try again or call us at +63 917 123 4567.');
   }
 }
 
-async function clickOption(value, label) {
-  addUserMessage(label);
-  clearOptions();
-  document.getElementById('chat-input').style.display = 'none';
-  addBotMessage('', true);
+async function clickOpt(value, label) {
+  document.querySelectorAll('.chat-opt-btn').forEach(b => b.disabled = true);
+  addUserMsg(label);
+  clearOpts();
+  document.getElementById('chat-input').disabled = true;
+  showTyping();
   try {
-    const res = await callBot(value, currentStep);
-    removTyping();
-    handleBotResponse(res);
+    const res = await callBot(value, curStep);
+    removeTyping();
+    handleResp(res);
   } catch(e) {
-    removTyping();
-    addBotMessage('Sorry, something went wrong. Please try again.');
+    removeTyping();
+    addBotMsg('Sorry, something went wrong. Please try again.');
   }
 }
 
-function addBotMessage(text, isTyping = false) {
+function addBotMsg(html) {
   const msgs = document.getElementById('chat-messages');
-  const div = document.createElement('div');
-  div.className = 'msg msg-bot';
-  if (isTyping) {
-    div.id = 'typing-msg';
-    div.innerHTML = '<div class="typing-indicator"><span></span><span></span><span></span></div>';
-  } else {
-    div.innerHTML = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>').replace(/\n/g, '<br>');
-  }
-  msgs.appendChild(div);
+  const d = document.createElement('div');
+  d.className = 'msg msg-bot';
+  d.innerHTML = html.replace(/\n/g,'<br>').replace(/\*\*(.*?)\*\*/g,'<strong>$1</strong>');
+  msgs.appendChild(d);
   msgs.scrollTop = msgs.scrollHeight;
 }
 
-function addUserMessage(text) {
+function addUserMsg(text) {
   const msgs = document.getElementById('chat-messages');
-  const div = document.createElement('div');
-  div.className = 'msg msg-user';
-  div.textContent = text;
-  msgs.appendChild(div);
+  const d = document.createElement('div');
+  d.className = 'msg msg-user';
+  d.textContent = text;
+  msgs.appendChild(d);
   msgs.scrollTop = msgs.scrollHeight;
 }
 
-function removTyping() {
-  const t = document.getElementById('typing-msg');
-  if (t) t.remove();
+function showTyping() {
+  const msgs = document.getElementById('chat-messages');
+  const d = document.createElement('div');
+  d.id = 'typing-el'; d.className = 'msg msg-bot';
+  d.innerHTML = '<div class="typing-indicator"><span></span><span></span><span></span></div>';
+  msgs.appendChild(d);
+  msgs.scrollTop = msgs.scrollHeight;
 }
 
-function showOptions(options) {
-  const container = document.getElementById('chat-options');
-  container.innerHTML = options.map(o => `
-    <button class="chat-opt-btn" onclick="clickOption('${o.value}', '${o.label.replace(/'/g,"\\'")}')">
-      ${o.label}
-    </button>
-  `).join('');
+function removeTyping() { const t = document.getElementById('typing-el'); if(t) t.remove(); }
+
+function showOpts(options) {
+  document.getElementById('chat-options').innerHTML = options.map(o =>
+    `<button class="chat-opt-btn" onclick="clickOpt('${o.value}','${o.label.replace(/'/g,"\\'")}')">  ${o.label}</button>`
+  ).join('');
 }
 
-function clearOptions() {
-  document.getElementById('chat-options').innerHTML = '';
-}
+function clearOpts() { document.getElementById('chat-options').innerHTML = ''; }
 
 // ── FORMS ─────────────────────────────────────────────────────
 function submitB2BForm() {
-  alert('✅ Quote request submitted! Our B2B team will contact you within 2 business hours.\n\nFor urgent inquiries: +63 917 123 4567 or hello@techfactoryphm.com');
+  const company = document.getElementById('b2b-company').value;
+  const contact = document.getElementById('b2b-contact').value;
+  const email   = document.getElementById('b2b-email').value;
+  if (!company || !contact || !email) { alert('Please fill in Company Name, Contact Person, and Email.'); return; }
+  alert('✅ Quote request submitted!\n\nOur B2B team will contact you within 2 business hours.\n\nFor urgent inquiries:\n📱 +63 917 123 4567\n📧 hello@techfactoryphm.com');
 }
 
 function submitContactForm() {
+  const name = document.getElementById('ct-name').value;
+  const email = document.getElementById('ct-email').value;
+  if (!name || !email) { alert('Please fill in your name and email.'); return; }
   alert('✅ Message sent! We\'ll get back to you within 2 hours during business hours.');
 }
 
 // ── MOBILE MENU ───────────────────────────────────────────────
+let mobileMenuOpen = false;
 function toggleMobileMenu() {
+  mobileMenuOpen = !mobileMenuOpen;
   const links = document.querySelector('.nav-links');
-  links.style.display = links.style.display === 'flex' ? 'none' : 'flex';
-  links.style.flexDirection = 'column';
-  links.style.position = 'fixed';
-  links.style.top = '64px';
-  links.style.left = '0';
-  links.style.right = '0';
-  links.style.background = 'var(--dark)';
-  links.style.padding = '20px 40px';
-  links.style.borderBottom = '1px solid var(--border)';
+  if (mobileMenuOpen) {
+    links.style.cssText = 'display:flex;flex-direction:column;position:fixed;top:64px;left:0;right:0;background:var(--dark);padding:20px 40px;border-bottom:1px solid var(--border);z-index:99;gap:16px;';
+  } else {
+    links.style.display = 'none';
+  }
 }
 
-// ── OPEN CHAT BUTTONS ─────────────────────────────────────────
-document.getElementById('hero-ai-btn').addEventListener('click', () => {
-  if (!chatOpen) toggleChat();
-});
-document.getElementById('nav-build-btn').addEventListener('click', (e) => {
-  e.preventDefault();
-  if (!chatOpen) toggleChat();
-});
+// ── BUTTON LISTENERS ──────────────────────────────────────────
+document.getElementById('hero-ai-btn').addEventListener('click', () => { if(!chatOpen) toggleChat(); });
+document.getElementById('nav-build-btn').addEventListener('click', e => { e.preventDefault(); if(!chatOpen) toggleChat(); });
+
+// ── SCROLL REVEAL ─────────────────────────────────────────────
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.style.opacity='1'; e.target.style.transform='translateY(0)'; }
+  });
+}, { threshold: 0.1 });
 
 // ── INIT ──────────────────────────────────────────────────────
-renderProducts('all');
+renderProducts('all', null);
 renderPrebuilts();
 renderBranded();
 renderFAQs();
 
-// Scroll reveal
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      e.target.style.opacity = '1';
-      e.target.style.transform = 'translateY(0)';
-    }
-  });
-}, { threshold: 0.1 });
-
-document.querySelectorAll('.product-card, .prebuilt-card, .why-card, .perk, .contact-item').forEach(el => {
+document.querySelectorAll('.product-card,.prebuilt-card,.why-card,.perk,.contact-item').forEach(el => {
   el.style.opacity = '0';
   el.style.transform = 'translateY(20px)';
   el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
